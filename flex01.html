@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex</title>
+    <style>
+        .flexbox{
+            height: 200px;
+            background-color:antiquewhite;
+            display: flex;
+        }
+        .flexbox > div{
+            margin: 10px;
+            background-color: aquamarine;
+            width: 800px;
+            flex: 1 0 0;
+        }
+        /*
+        .flexbox > div:nth-child(1){
+            flex: 1;
+        }
+        .flexbox > div:nth-child(2){
+            flex: 2;
+        }
+        .flexbox > div:nth-child(3){
+            flex: 1;
+        }
+        */
+    </style>
+</head>
+<body>
+    <div class="flexbox">
+        <div><img src="images/13.png" alt=""></div>
+        <div><img src="images/13.png" alt=""></div>
+        <div><img src="images/13.png" alt=""></div>
+    </div>
+</body>
+</html>

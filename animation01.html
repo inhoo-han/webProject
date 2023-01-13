@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation</title>
+    <style>
+        .ani{
+            width: 300px;
+            height: 200px;
+            background-color: lightskyblue;
+            animation-name: colorChange/*애니메이션이름*/;    
+            animation-duration: 2s;
+            /*animation-fill-mode: forwards;
+            animation-delay: 2s;*/
+            animation-iteration-count: 4;
+            animation-direction: alternate;
+            animation-timing-function: ease;
+            animation: colorChange 2s linear infinite alternate;
+        }
+        /*
+        @keyframes colorChange {
+            from{
+                background-color: lightskyblue;
+            }
+            to{
+                background-color: lightsalmon;
+            }
+        }
+        */
+        @keyframes colorChange {
+            from{
+                background-color: lightskyblue; transform: translate(0,0);
+            }
+            to{
+                background-color: lightgoldenrodyellow; transform: translate(30px,0);
+            }
+        }
+        /*@keyframes colorChange {
+            0%{background-color: lightskyblue; transform: translate(0,0);}
+            20%{background-color: lightgoldenrodyellow; transform: translate(30px,0);}
+            40%{background-color: lightgreen; transform: translate(30px,30px);}
+            60%{background-color: lightsalmon; transform: translate(40px,40px);}
+            100%{background-color: lightcoral; transform: translate(0,0);}
+        }*/
+    </style>
+</head>
+<body>
+    <div class="ani"></div>
+</body>
+</html>

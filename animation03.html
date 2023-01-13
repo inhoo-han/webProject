@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation 03</title>
+    <style>
+        .sub_bg{
+            width: 100%;
+            height: 300px;
+            background: url(images/corona.jpg) no-repeat;
+            background-size: 100%;
+            animation: back_ani 10s linear 0s infinite ;
+        }
+        .sub_bg h2{
+            color: #eee;
+            font-size: 50px;
+            text-align: center;
+            padding-top: 80px;
+        }
+        .sub_bg h2 span{
+            display: block;
+            font-size: 40px;
+        }
+        @keyframes back_ani {
+            0%{
+                background-position: 0% 0%;
+            }
+            50%{
+                background-position: 0% 100%;
+            }
+            100%{
+                background-position: 0% 0%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="sub_bg">
+        <h2>코로나 박멸! 
+            <span>예방에 최선을 다합시다</span>
+        </h2>
+    </div>
+</body>
+</html>

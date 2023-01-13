@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation02</title>
+    <style>
+        .ani_box{
+            position: relative;
+            width: 100px;
+            height: 100px;
+            background: url(images/bg_animation.png)no-repeat center;
+        }
+        .flower{
+            position: absolute;
+            left: 10px;
+            top: 9px;
+        }
+        @keyframes f_ani1 {
+            from{
+                transform: scale(0.3, 0.3);
+                opacity: 0.5;
+            }
+            to{
+                transform: scale(1.2, 1.2);
+                opacity: 0;
+            }
+        }
+        @keyframes f_ani2 {
+            0%{
+                transform: scale(0.5, 0.5);
+                opacity: 1;
+            }
+            100%{
+                transform: scale(1.4, 1.4);
+                opacity: 0;
+            }
+        }
+        .flower1{
+            animation: f_ani1 3s infinite;
+        }
+        .flower2{
+            animation: f_ani2 3s infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="ani_box">
+        <img src="images/ani_spade.png" alt="" class="flower flower1">
+        <img src="images/ani_spade.png" alt="" class="flower flower2">
+    </div>
+</body>
+</html>

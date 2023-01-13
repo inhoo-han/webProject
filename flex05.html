@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex</title>
+    <style>
+        .flexbox{
+            display: flex;
+            height: 200px;
+            align-items: baseline;
+            background-color: antiquewhite;
+        }
+        .flexbox > div{
+            flex: 1 1 100px;
+            background-color: rgba(32, 178, 170);
+            font-size: 20px;
+            margin: 10px;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="flexbox">
+        <div>First</div>
+        <div><h1>Second</h1></div>
+        <div>Third</div>
+    </div>
+</body>
+</html>

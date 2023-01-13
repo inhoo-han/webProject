@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Layout</title>
+</head>
+<style>
+    .wrap{
+        display: grid;
+        margin: 1px;
+        padding: 10px;
+        font-size: 30px;
+        grid-template-columns: 30% 70%;
+        grid-template-rows: 50px 150px 50px;
+    }
+    .grid1{
+        grid-column-start: 1;
+        grid-column-end: 3;
+        background-color: lightgoldenrodyellow;
+    }
+    .grid2{
+        grid-column-start: 1;
+        grid-column-end: 2;
+        background-color: lightgreen;
+    }
+    .grid3{
+        grid-column-start: 2;
+        grid-column-end: 3;
+        background-color: lightskyblue;
+    }
+    .grid4{
+        grid-column-start: 1;
+        grid-column-end: 3;
+        background-color: lightslategrey;
+    }
+
+</style>
+<body>
+    <div class="wrap">
+        <div class="grid1">header</div>
+        <div class="grid2">sidemenu</div>
+        <div class="grid3">content</div>
+        <div class="grid4">footer</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>전환효과</title>
+    <style>
+        .menu li{
+            list-style: none;
+        }
+        .menu li a{
+            display: block;
+            width: 300px;
+            height: 20px;
+            background-color: lightpink;
+            text-decoration: none;
+            padding: 10px;
+            margin-bottom: 2px;
+            color: #333;
+        }
+        .menu li a:hover{
+            width: 350px;
+            background-color: blueviolet;
+            color: white;
+            transition: width 1s, background-color 1s;
+        }
+        img{
+            opacity: 0.4;
+            border-radius: 10px;
+            transition: 1s;
+        }
+        img:hover{
+            opacity: 1;
+            transform: rotate(360deg);
+            transition: transform 3s;
+        }
+    </style>
+</head>
+<body>
+    <h3>이동 효과 메뉴</h3>
+    <h4>23.01.10.Tue</h4>
+    <!-- 단축쓰 : ul.menu>li*5>a -->
+    <ul class="menu">
+        <li><a href="#">회사소개</a></li>
+        <li><a href="#">제품소개</a></li>
+        <li><a href="#">서비스</a></li>
+        <li><a href="#">제품지원</a></li>
+        <li><a href="#">커뮤니티</a></li>
+
+    </ul>
+    <img src="images/girl.jpg" alt="" />
+</body>
+</html>

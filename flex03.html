@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    /* 반응형 웹. 기본 스타일은 모바일에 맞추는 것이 편하다 */
+    ul{
+        padding: 0;
+        margin: 0;
+    }
+    li{
+        list-style: none;
+    }
+    .menu{
+        display: flex;
+        flex-direction: column;
+        background-color: lightgoldenrodyellow;
+    }
+    .menu > li{
+        flex: 1;
+        margin: 2px;
+    }
+    .menu li a{
+        display: block;
+        padding: 10px;
+        text-decoration: none;
+        background-color: lightpink;
+    }
+    /* 태블릿 */
+    @media all and (min-width: 768px) {
+        .menu{
+            flex-direction: row;
+            justify-content: space-around;
+            background-color: lightgoldenrodyellow;
+        }
+        .menu > li{
+            flex: 0 0 80px;
+            margin: 10px;
+        }
+        .menu li a{
+            padding: 0;
+        }
+    }
+    /* 데스크톱 */
+    @media all and (min-width:1025px) {
+        .menu{
+            justify-content: flex-start;
+            background-color: lightgoldenrodyellow;
+        }
+        
+    }
+</style>
+<body>
+    <h3>Menu</h3>
+    <ul class="menu">
+        <li><a href="#">회사소개</a></li>
+        <li><a href="#">제품소개</a></li>
+        <li><a href="#">서비스</a></li>
+        <li><a href="#">제품지원</a></li>
+        <li><a href="#">커뮤니티</a></li>
+    </ul>
+</body>
+</html>
