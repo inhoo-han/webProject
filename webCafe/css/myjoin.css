@@ -179,6 +179,9 @@ button.cancel{
     margin-top: 10px;
     line-height: 1.3em;
 }
+.twitterUser p>mark{
+    background-color: #fff;
+}
 .twitterUser time{
     float: right;
     margin: 10px 0;
