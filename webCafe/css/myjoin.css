@@ -1,0 +1,187 @@
+@charset "UTF-8";
+
+#contentArea{
+    position: relative;
+}
+/* 회원가입 영역 시작 */
+#joinArea{
+    position: relative;
+    width: 620px;
+    padding: 10px 30px 0 0;
+}
+#joinArea .location{
+    position: absolute;
+    top: 5px;
+    right: 60px;
+}
+#joinArea .location strong{
+    color: #22b145;
+}
+#joinArea h2{
+    color: #ff4e00;
+    font-size: 18px;
+    font-weight: bold;
+}
+#joinArea h2::after{
+    display: block;
+    content: "";
+    width: 100%;
+    height: 1px;
+    margin: 10px 0;
+    background-color: #ff4e00;
+}
+.require{
+    display: inline-block;
+    width: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.require::before{
+    position: relative;
+    top: 5px;
+    font-family: "webCafeIcon";
+    content: "s";
+    color: #ff4e00;
+}
+.requireNotice{
+    float: right;
+    margin-top: 10px;
+}
+.joinForm{
+    margin-top: 50px;
+}
+.joinForm p{
+    margin: 0;
+    border-top: 1px solid #ccc;
+}
+.joinForm p:last-child{
+    border-bottom: 1px solid #ccc;
+}
+.joinForm label{
+    display: inline-block;
+    width: 125px;
+    height: 30px;
+    padding: 10px 0 5px 20px;
+    font-weight: bold;
+    background-color: rgb(253, 255, 218);
+}
+.joinForm input{
+    display: inline-block;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #777;
+    border-radius: 1px;
+}
+.joinForm p a{
+    color: #fff;
+    font-weight: bold;
+}
+.formButton{
+    display: inline-block;
+    padding: 3px 10px;
+    margin-left: 5px;
+    background-color: #ff657f;
+    border: 1px solid #ff657f;
+    border-radius: 10px;
+}
+.addNumLabel{
+    display: inline-block;
+    height: 64px;
+}
+#addressNumber{
+    width: 50px;
+}
+#address{
+    position: relative;
+    top: -10px;
+    left: 148px;
+    width: 300px;
+    margin-bottom: 0px;
+}
+#email{
+    width: 200px;
+}
+.mailingTitle{
+    margin-left: 10px;
+}
+.mailingRadio{
+    position: relative;
+    top: -10px;
+    left: 148px;
+    display: inline-block;
+}
+button{
+    position: relative;
+    margin: 20px 5px;
+    left: 200px;
+    color: #fff;
+    font-size: 18px;
+}
+button.joinUs{
+    padding: 0 20px 10px;
+    background-image: linear-gradient(to bottom, #666 0%, #555 100%);
+    border: 0px;
+    border-radius: 3px;
+}
+button.joinUs::before{
+    position: relative;
+    top: 5px;
+    right: 5px;
+    font-family: "webCafeIcon";
+    content: "h";
+    font-size: 25px;
+}
+button.cancel{
+    padding: 9px 20px 10px;
+    background-image: linear-gradient(to bottom, #999 0%, #777 50%, #555 100%);
+    border: 0px;
+    border-radius: 3px;
+}
+
+/* 회원가입 영역 종료 */
+/* 트위터 영역 시작 */
+#twitter{
+    position: relative;
+    width: 254px;
+    padding: 0 30px;
+}
+#twitter h2{
+    color: #000;
+    font-size: 18px;
+    font-weight: bold;
+}
+#twitter h2::before{
+    position: relative;
+    top: 5px;
+    margin-right: 5px;
+    font-family: "webCafeIcon";
+    content: "t";
+    font-size: 28px;
+    color: rgb(6, 176, 238);
+}
+#twitter h2::after{
+    display: block;
+    content: "";
+    width: 100%;
+    height: 1px;
+    margin: 9px 0;
+    background-color: #ccc;
+}
+.twitterUser{
+    margin: 30px 0;
+}
+.twitterUser img{
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+.twitterUser p{
+    margin-top: 10px;
+    line-height: 1.3em;
+}
+.twitterUser time{
+    float: right;
+    margin: 10px 0;
+}
+
+/* 트위터 영역 종료 */
