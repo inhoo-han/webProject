@@ -7,6 +7,9 @@
     border-left: 1px solid #ccc;
     border-radius: 5px 5px 0 0;
 }
+.event h2 span{
+    color: #ff4e00;
+}
 .relatedLink{
     padding: 10px;
     border-left: 1px solid #ccc;

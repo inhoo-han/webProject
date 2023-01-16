@@ -140,11 +140,223 @@
     width: 410px;
     margin-right: 30px;
 }
+/* 웹카페 검색 영역 */
+.search{
+    border-radius: 15px 15px 0 0;
+    background-image: linear-gradient(to bottom, #ddd 0%, #f8f8f8 50%, #fff 100%);
+    padding: 10px 25px 0 25px;
+}
+.search label{
+    color: #777;
+    font-weight: bold;
+    padding: 2px 0 4px 2px;
+}
+.search label::before{
+    position: relative;
+    top: 5px;
+    font-family: "webCafeIcon";
+    content: "z";
+    color: #7d7d7d;
+    font-weight: normal;
+    font-size: 18px;
+    margin-right: 5px;
+}
+#keyword{
+    width: 220px;
+    height: 18px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin: 0 5px;
+}
+.search button{
+    padding: 3px 10px;
+    color: #fff;
+    background: linear-gradient(to bottom, #9c9da1 0%, #666 30%, #4e4f56 100%);
+    border: 1px solid #949494;
+    border-radius: 3px;
+    font-weight: bold;
+}
+/* 공지사항 및 자료실 영역 */
+.board{
+    position: relative;
+    margin-top: 20px;
+    height: 170px;
+}
+.board::before{
+    position: absolute;
+    top: 27px;
+    left: 0;
+    width: 370px;
+    height: 1px;
+    content: "";
+    background-image: linear-gradient(to right, #e3e3e3 0%, #fff 100%);
+}
+.board section{
+    position: relative;
+}
+.board section:target{
+    z-index: 10;
+}
+.board h2{
+    float: left;
+    font-size: 12px;
+}
+.board h2 a{
+    display: inline-block;      /*공지사항 옆에 자료실 들어가야 하므로 inline + 블록*/
+    padding: 6px 15px;
+    color: #7a7a7a;
+    font-family: "NanumEx";
+    border: 1px solid #c9c9c9;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    background-image: linear-gradient(to bottom, #fcfcfc 0%, #eaeaea 100%);
+}
+.board section:target h2 a{
+    background: #fff;
+    color: #ff4911;
+    border: 1px solid #ff4911;
+    border-bottom: 1px solid #fff;
+}
+.board ul{
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+}
+.board ul a{
+    display: inline-block;
+    width: 300px;
+    color: #666;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.board ul a::before{
+    position: relative;
+    top: 2px;
+    font-family: "webCafeIcon";
+    content: "r";
+    color: #666;
+}
+.board time{
+    float: right;
+}
+.board li{
+    margin-bottom: 10px;
+}
+.board .more{
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 8px;
+}
+/* 모은 more 전부! */
+.more::before{
+    position: relative;
+    top: 2px;
+    font-family: "webCafeIcon";
+    content: "p";
+    color: rgb(37, 175, 71);
+    margin-right: 3px;
+}
+
+/* 새소식 영역 */
+.news{
+    position: relative;
+    margin-top: 20px;
+}
+.news::before{
+    /* copy board::before*/
+    position: absolute;
+    top: 27px;
+    left: 0;
+    width: 370px;
+    height: 1px;
+    content: "";
+    background-image: linear-gradient(to right, #e3e3e3 0%, #fff 100%);
+}
+.news h2{
+    font-size: 14px;
+    color: #ff5a00;
+}
+.news .more{
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 8px;
+}
+.news article{
+    margin: 25px 0 0 130px;
+}
+.news h3{
+    margin-bottom: 10px;
+    font-size: 12px;
+}
+.news h3::before{
+    position: relative;
+    top: 2px;
+    font-family: "webCafeIcon";
+    content: "r";
+    color: #666;
+}
+.news time{
+    font-size: 11px;
+    margin-left: 12px;
+}
+.news p{
+    margin-left: 12px;
+    margin-top: 8px;
+    line-height: 180%;
+}
+.news figure{
+    position: absolute;
+    top: 45px;
+    left: 0;
+    text-align: center;
+}
+.news figure img{
+    box-shadow: 0 10px 15px #eee;
+    margin-bottom: 15px;
+}
 /* * * * * * infoArea 영역 끝 * * * * * */
 /* * * * * * linkArea 영역 시작 * * * * * */
 #linkArea{
     width: 214px;
     margin-right: 30px;
+}
+#linkArea h2{
+    font-size: 14px;
+    padding-bottom: 10px;
+}
+#linkArea h2>span{
+    color: #ff4911;
+    margin-left: 3px;
+}
+.eventRelatedArea{
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-image: linear-gradient(to bottom, #fff 0%, #f4f4ff 100%);
+    padding: 10px;
+}
+.event{
+    position: relative;
+}
+.event img{
+    border: 1px solid #eee;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
+}
+.event p{
+    padding: 10px 0;
+}
+.event em{
+    display: block;     /*html에서 br/안 쓰고도 내릴 수 있다!*/
+    font-style: normal;
+}
+.btnEventArea{
+    position: absolute;
+    top: 0;
+    right: 0;
 }
 
 /* * * * * * linkArea 영역 끝 * * * * * */
