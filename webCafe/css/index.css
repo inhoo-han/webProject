@@ -336,7 +336,7 @@
 .eventRelatedArea{
     border: 1px solid #ccc;
     border-radius: 5px;
-    background-image: linear-gradient(to bottom, #fff 0%, #f4f4ff 100%);
+    background-image: linear-gradient(to bottom, #fff 0%, #f4f4f4 100%);
     padding: 10px;
 }
 .event{
@@ -358,7 +358,110 @@
     top: 0;
     right: 0;
 }
+.btnEventArea a{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-indent: 20px;
+    background-image: url(images/back_forwar1d.png);
+    background-repeat: no-repeat;
+}
+.btnEventPrev{
+    background-position: 0 0;
+}
+.btnEventNext{
+    background-position: 100% 0;
+}
 
+/* 관련 사이트 영역 */
+.relatedLink>h2{
+    padding: 10px;
+    border-top: 1px solid #ccc;
+}
+.relatedLink ul {
+    height: 25px;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    transition: height 0.2s;
+ 
+}
+.relatedLink ul:hover{
+    height: 150px;
+    padding: 10px 0;
+
+}
+.relatedLink li{
+    height: 25px;
+    line-height: 25px;
+    text-indent: 1.5em;
+}
+.relatedLink a{
+    position: relative;
+    left: -19px;
+    display: inline-block;
+    width: 100%;
+}
+
+/* 인기 사이트 영역 */
+.hotLink{
+    position: relative;
+    margin-top: 20px;
+    padding: 10px 12px 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-image: linear-gradient(to bottom, #fff 0%, #f4f4f4 100%);
+}
+.hotLink ol{
+    margin-top: 5px;
+    padding: 0;
+    overflow: hidden;
+}
+.hotLink li{
+    position: relative;
+    margin-top: 7px;
+    counter-increment: number;
+}
+.hotLink li::before{
+    content: counter(number, decimal);
+    padding: 2px 5px;
+    margin-right: 5px;
+    border-radius: 3px;
+    background-color: #a1a1a1;
+    color: #fff;
+    font-weight: bold;
+    font-size: 0.75em;
+}
+/* 요고 없으면 4번이 조금 잘려 나온다. */
+.hotLink li:last-child{
+    margin-bottom: 2px;
+}
+.hotLink em{
+    float: right;
+    width: 8px;
+    height: 0px;
+    padding-top: 12px;
+    overflow: hidden;
+    background: url(images/rank.png) no-repeat 0 0;
+}
+.hotLink .up{
+    background-position: 0 0;
+}
+.hotLink .stop{
+    background-position: 0 50%;
+}
+.hotLink .down{
+    background-position: 0 100%;
+}
+.hotLink .more{
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    padding: 8px;
+}
 /* * * * * * linkArea 영역 끝 * * * * * */
 
 
