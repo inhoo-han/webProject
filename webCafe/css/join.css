@@ -1,0 +1,64 @@
+@charset "UTF-8";
+
+#contentArea{
+    position: relative;
+}
+/* 로그인 영역 */
+#memberArea{
+    position: relative;
+    width: 630px;
+    padding: 20px 30px 30px 0;
+}
+.location{
+    position: absolute;
+    top: 30px;
+    right: 50px;
+    font-size: 11px;
+}
+.location strong{
+    color: #1ea546;
+}
+#memberArea h2{
+    color: #ff4e00;
+}
+#memberArea h2::after{
+    display: block;
+    margin: 15px 0;
+    content: "";
+    width: 100%;
+    height: 1px;
+    background-color: #ff4e00;
+}
+.require{
+    display: inline-block;
+    width: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-indent: 0px;
+}
+.require::before{
+    position: relative;
+    top: 3px;
+    display: inline-block;
+    font-family: "webCafeIcon";
+    content: "s";
+    color: #ff4e00;
+}
+#memberArea .formSign{
+    float: right;
+}
+#joinForm{
+    position: relative;
+    margin-top: 50px;
+}
+
+
+
+
+/* 트위터 영역 */
+#twitterArea{
+    position: relative;
+    width: 240px;
+    padding: 30px;
+    border: 1px solid navy;
+}
