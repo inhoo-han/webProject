@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // let dan = prompt("원하는 구구단 단수는?");
+        // document.write(`<h2> * * ${dan}단 * * </h2>`);
+        // for(let i = 1; i < 10; i++ ){
+        //     document.write(`${dan} X ${i} = ${dan * i}<br/>`);
+        // }
+        for(let i = 2; i <= 9; i++){
+            document.write(`<div>`);
+            document.write(`<h3> ${i}단 </h3>`);
+            for(let j = 1; j <= 9; j++){
+                document.write(`${i} X ${j} = ${i*j} <br>`)
+            }
+            document.write(`</div>`);
+        }
+        function question() {
+            function random(limit) {
+            return Math.trunc(Math.random() * limit + 1);
+        }
+        let question01 = (random(8)+1);
+        let question02 = (random(9));
+        let answer = prompt(`${question01} X ${question02} = ?`);
+        if(answer == (question01*question02)){
+            alert("정답입니다!");
+        } else{
+            alert("오답입니다아. .");
+        }
+        }  
+    </script>
+       <style>
+           div{
+               display: inline-block;
+               border: 1px solid #ccc;
+               border-radius: 3px;
+               margin: 10px;
+               padding: 10px 20px;
+           }
+           h3{
+               text-align: center;
+               font-weight: bold;
+           }
+           button{
+            display: block;
+            margin: 20px auto;
+            width: 100px;
+            height: 50px;
+            border: 0px;
+            background-image: linear-gradient(to bottom, "red" 0%,/* "orange"15%, "yellow"30%, "green"45%, "blue"60%, "navy"75%, "purple"90%,*/ "black" 100%);
+           }
+       </style>
+</head>
+<body>
+    <button onclick="question()">문제 풀기</button>
+</body>
+</html>
