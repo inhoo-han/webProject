@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let date = new Date();
+        let hour = date.getHours();
+        if (hour < 11) {
+            alert('아침먹을 시간입니다.');
+        } else if(hour >=11 && hour <= 15){
+            alert('점심먹을 시간입니다.');
+        } else{
+            alert('저녁먹을 시간입니다.');
+        }
+        
+        let min = date.getMinutes;
+        if(hour>=9 && (hour<=15)){
+            if((hour==11 && min>=50) || (hour==12 && min<=30)){
+                document.write("점심시간입니다.");
+            } else if(min>=50 && min<60){
+                document.write("쉬는시간입니다.");
+            } else{
+                document.write("수업시간입니다.")
+            }
+        } else{
+            document.write("수업시간이 아닙니다~~~~");
+        }
+    </script>
+</head>
+<body>
+    <h1>길동이의 홈페이지</h1>
+</body>
+</html>
