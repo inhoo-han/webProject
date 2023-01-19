@@ -1,0 +1,53 @@
+<!-- 내장함수 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 기본 형식 */
+        // setTimeout(function() {
+        //     /*3s가 되면 이 안에 있는 내용을 실행한다.*/
+        //     alert("3초가 지났습니다. 🤣🤣🤣")
+        // }, 3000/*3s*/);
+
+        /* 화살표 표기법 응용 */
+        // setTimeout(() => {
+        //     alert("3초가 지났습니다. ➡➡➡")
+        // }, 3000);
+
+        /* setInterval 기본 형식*/
+        // setInterval(function() {
+        //     alert("3초가 지났습니다.💨💨💨");
+        // }, 3000);
+
+        /* 화살표 표기법 응용 */
+        // setInterval(() => {
+        //     alert("3초가 지났습니다. ➡💨➡")
+        // }, 3000);
+
+        // let si = setInterval(() => {
+        //     window.open("https://blog.naver.com/a5019999", "", "width=500, height=300");
+        // }, 3000);
+
+
+        var site = ["http://www.kbs.co.kr", "http://www.sbs.co.kr", "http://www.imbc.com"];
+        var count = 0;
+        let si = setInterval(() => {
+            window.open(site[count], "", "width=500, height=300");
+            count++;
+            if(count==3) count=0;
+        }, 3000);
+        
+        function stop() {
+            clearInterval(si);
+        }    
+
+    </script>
+</head>
+<body>
+    <button onclick="stop();">중😎지</button>
+</body>
+</html>

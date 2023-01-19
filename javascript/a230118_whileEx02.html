@@ -5,10 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body{
+            font-size: 1.2em;
+            text-align: center;
+        }
+        h1{
+            padding-bottom: 30px;
+            border-bottom: 5px double sandybrown;
+        }
+    </style>
     <script>
         let wonderNum = Number(prompt("1부터 100사이의 숫자 중 배수의 개수를 알고싶은 수를 입력하세요"));
         let count = 0;
-        document.write(`${wonderNum}의 배수 찾기<br>`);
+        document.write(`<h1>👀${wonderNum}의 배수 찾기👀</h1>`);
         /* while */
         // let num = 1;
         // while(true){
@@ -26,11 +36,11 @@
         /* for */
         for(let i = 1; i <= 100; i++){
             if(i%wonderNum == 0){
-                document.write(i + ", ");
+                "<span>" + document.write(i + ", "); + "<span>"
                 count++;
             }
         }
-        document.write("<br>"+wonderNum + "의 배수 총 개수 : " + count);
+        document.write("<p>"+wonderNum + "의 배수 총 개수 : " + count+"</p>");
     </script>
 </head>
 <body>
