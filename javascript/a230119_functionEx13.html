@@ -1,4 +1,4 @@
-<!-- setTimeout + 클로저 -->
+<!-- 쌤은 14번임. -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,17 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-        let i;
-        for(i = 1; i <= 10; i++){
-            (function(i) {
-                setTimeout(function () {
-                    document.write(i+"<br>");
-                }, 1000);
-            })(i);
-        }
+        let price = "1000px";
+        // document.write(Number(price)+20);  
+        // document.write(parseInt(price)+20);  
+        let dollar = "23.5";
+        document.write("달러를 원화로 => " + parseFloat(dollar) * 1280);
     </script>
 </head>
 <body>
-    <h1 id="head">😎</h1>
+
 </body>
 </html>
