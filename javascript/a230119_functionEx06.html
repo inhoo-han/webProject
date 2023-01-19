@@ -1,0 +1,33 @@
+<!-- 클로저 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        function test(name) {
+            let output = name + "님 안녕하세요";
+            return function(){
+                alert(output);
+            }
+        }    
+        // alert(test("김철수"));
+        test("김철수")();
+        // alert(output);
+        */
+        function test(name) {
+            let output = name + "님 안녕하세요";
+            return (function(){
+                alert(output);
+            }());
+        }    
+        test("김철수");
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let num1 = parseInt(prompt("첫 번째 숫자는?"));
+        let num2 = parseInt(prompt("두 번째 숫자는?"));
+        
+        /* No Return */
+        // addNumber(num1,Number(num2));
+        // function addNumber(a,b) {
+        //     let sum = a+b;
+        //     alert("두 수의 합은 " + sum)
+        // }
+
+        /* Return */
+        let result = addNumber(num1, num2);
+        alert("두 수의 합은 " + result);
+        
+        function addNumber(a,b) {
+            let sum = a+b;
+            return sum;
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
