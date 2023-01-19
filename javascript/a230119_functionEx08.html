@@ -1,0 +1,43 @@
+<!-- 내장함수 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // /* 기본 코드 */
+        // var hello = function () {
+        //    return "안녕하세요"; 
+        // }
+        // alert(hello());
+        // /* 화살표 함수 응용 */
+        // var hello=() =>"안녕하세요";
+        // document.write("<h1>" + hello() + "</h1>");
+
+        // var ab = function (){
+        //     var a = 20;
+        //     var b = 30;
+        //     var sum = a+b;
+        // }
+        // //  인수↓  ↓function
+        // var ab=() =>{
+        //     var a = 20;
+        //     var b = 30;
+        //     var sum = a+b;
+        // }
+
+        var hello = function(name) {
+            return name + "님 안녕하세요";
+        }
+        document.write("<h1>" + hello("김철수") + "</h1>");
+
+        var hello=(name) => name + "님 안녕하세요";
+        document.write("<h1>" + hello("김철수") + "</h1>");
+    </script>
+</head>
+<body>
+    <h1>🌹</h1>
+</body>
+</html>
