@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 생성자 함수 생성 */
+        function Student(name, korean, english, math){
+            this._name = name;
+            this._korean = korean;
+            this._english = english;
+            this._math = math;
+        }
+        Student.prototype.getSum = function () {
+            return this._korean + this._english + this._math;
+        };
+        Student.prototype.getAvg = function () {
+            return this.getSum()/(Student.length-1);
+        };
+        Student.prototype.toString = function () {
+            return this._name + "&nbsp;" + this.getSum() + "&nbsp;" + this.getAvg() + "<br>";
+        };
+        /* 생성자 함수 객체 */
+        let students = [];
+        students.push(new Student('BaekHo', 30, 11, 29));
+        // let student1 = new Student('BaekHo', 30, 11, 29);
+        students.push(new Student('TaeUng', 40, 28, 17));
+        // let student2 = new Student('TaeUng', 40, 28, 17);
+        students.push(new Student('ChiSu', 98, 95, 100));
+        // let student3 = new Student('ChiSu', 98, 95, 100);
+        /* 생성자 함수 객체 출력 */
+        document.write("<h2>* * 1반 성적표 * *</h2>");
+        document.write("<p>이름 &nbsp; 총점 &nbsp; 평균 <p>");
+        for(let i in students){
+            document.write(students[i]);
+        }
+        // document.write(student1.toString());
+        // document.write(student2.toString());
+        // document.write(student3.toString());
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

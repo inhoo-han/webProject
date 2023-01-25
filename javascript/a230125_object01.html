@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 배열과 객체의 차이 */
+
+        /* 배열 */
+        // let fruit = ["딸기", "사과", "배", "바나나", "단감"];
+        // alert(fruit[0]);
+        
+        /* 객체 */
+        // let product = {
+        //     제품명 : '건조망고',
+        //     유형 : '당절임',
+        //     가격 : 5000,
+        //     원산지 : '필리핀'
+        // };
+        // alert(product['제품명']);
+        // alert(product.원산지);
+
+        let person = {
+            name : 'hong',
+            meal : function(food) {
+                // alert(person.name + "/" + food);
+                alert(this.name + "/" + food);
+            }
+        };
+        person.meal('rice');
+        person.meal('noodle');
+        // alert(person.name + "이/가 " + person.meal + "을/를 먹습니다.");
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

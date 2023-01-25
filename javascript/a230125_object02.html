@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let student = {
+            name : 'baek-ho',
+            korean : 30,
+            english : 11,
+            math : 29
+        }; 
+        /* 나의 방법 */
+        // document.write("<h2>" + student.name + "의 성적표</h2>");
+        // document.write("=============<br>");
+        // document.write("국어 : " + studentkKorean + "<br>");
+        // document.write("영어 : " + student.english + "<br>");
+        // document.write("수학 : " + student.math + "<br>");
+        // document.write("총점 : " + (student.korean+student.english+student.math) + "<br>");
+        // document.write("평균 : " + (student.korean+student.english+student.math)/3 + "<br>");
+
+        /* 선생님의 방법 : document.write를 한 번만 쓰는 방법 */
+        let output = "";
+        with(student){
+            output += "<h2>" + name + "의 성적표</h2>";
+            output += "====================<br>";
+            output += "국어 : " + korean + "<br>";
+            output += "영어 : " + english + "<br>";
+            output += "수학 : " + math + "<br>";
+            output += "총점 : " + (korean+english+math) + "<br>";
+            output += "평균 : " + (korean+english+math)/3 + "<br>";
+        }
+        document.write(output);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
