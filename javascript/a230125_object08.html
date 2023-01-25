@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function Person(name, age){
+            let _name = name;
+            let _age = age;
+            return function() {
+                alert(_name + "의 나이는 " + _age + "입니다.");
+            }
+        }
+        let person1 = Person("강백호", 17);
+        let person2 = Person("송태섭", 18); 
+        let person3 = Person("정대만", 19);
+        person1();
+        person2();
+        person3._name = '채치수';
+        person3();
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

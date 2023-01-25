@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function Person(name, age){
+            this._name = name;
+            this._age = age;
+        }
+        Person.prototype.info = function () {
+            alert(this._name + "의 나이는" + this._age + "입니다.");
+        }
+        let person1 = new Person("강백호", 17);
+        let person2 = new Person("송태섭", 18); 
+        let person3 = new Person("정대만", 19);
+        person1.info();
+        person2.info();
+        person3._name = '채치수';
+        person3.info();
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
