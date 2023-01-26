@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let fruit1 = ["딸기", "수박", "바나나"];
+        let fruit2 = ["사과", "감귤", "망고", "배"];
+        let fruits = fruit1.concat(fruit2);
+        
+        /* pop() */
+        // fruit1.pop();
+        // document.write(fruit1);
+        // document.write(fruit1.length);
+
+        /* shift() */
+        fruit2.shift();
+        console.log(fruit2);
+        
+        let fruit3 = ["딸기", "수박", "바나나", "참외", "거봉"];
+        let fruit4 = ["사과", "감귤", "망고", "배"];
+
+        /* 원하는 위치의 요소를 삭제하거나 추가하는 함수 : splice() */
+        // fruit3.splice(2);
+        // document.write(fruit3);
+
+        fruit4.splice(2,1);
+        // document.write(fruit4);
+
+        fruit3.splice(2, "구아바");
+        // document.write(fruit3);
+
+        fruit4.splice(2,0,"파인애플", "바나나");
+        document.write(fruit4);
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

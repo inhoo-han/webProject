@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        window.onload = function() {
+            let head = document.querySelector("#msg");
+            // head.onclick = function() {
+            //     alert("모두 조심하세요!")
+            // }
+            // head.addEventListener("mouseover", message);
+            head.addEventListener("mouseout", bye);
+        }
+        //선언적 함수
+        function message() {
+            alert("선언적 함수曰, 모두 조심하세요");
+        }
+        function bye() {
+            alert("잘 가세요");
+        }
+    </script>
+</head>
+<body>
+    <h1 id="msg" onclick="message();">겨울철 감기</h1>
+</body>
+</html>

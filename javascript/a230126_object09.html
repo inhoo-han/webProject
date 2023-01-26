@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let book = {
+            title : '어린왕자',
+            pages : 65,
+            price : 15000,
+            author : '생텍쥐페리'
+        };
+        document.write("<h2> ** 신간 도서 정보 ** </h2>");
+        for(let key in book){
+            document.write(key + " : " + book[key] + "<br>");
+        }
+        let person = {
+            name : '강백호',
+            age : 17,
+            play : function(item) {
+                return this.name + "가 " + item + "을/를 합니다."
+            },
+            address : '서울시 북구'
+        };
+        // document.write(person.name);
+        let result = person.play('농구');
+        document.write(result + "<br>");
+        document.write(person.name + "의 현재 나이는 " + person.age + "이다.");
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
