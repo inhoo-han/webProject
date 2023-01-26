@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        /* length */
+        // let str = "hello";
+        // alert(str.length);
+        // let str = prompt("사용할 id를 입력해주세요", "6글자 이상");
+        // if(str.length < 6) {
+        //     alert("6글자 이상 입력해!");
+        // } else{
+        //     alert("참 잘했다.😎");
+        // }
+
+        let str = "computer";
+        let str1 = new String("computer");
+        /* toUpperCase */
+        str = str.toUpperCase();
+        /* charAt */
+        let ch = str.charAt(2);
+        /* indexOf */
+        let str3 = "hello thank you good luck to you";
+        let pos1 = str3.indexOf("you");
+        let pos2 = str3.indexOf("you", 16);
+        let pos3 = str3.indexOf("thank",16);
+        /* lastIndexOf */
+        let pos4 = str3.lastIndexOf("you");
+        let pos5 = str3.lastIndexOf("you", 25);
+        /* match */
+        let strm = str3.match("you");
+        /* replace */
+        let info = "지금은 html 공부중";
+        let info2 = info.replace("html","javascript");
+        /* search */
+        let pos6 = str3.search("you");
+        alert(pos6);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
