@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>브라우저 객체 모델(BOM)</title>
+    <script>
+        let ranTime = Math.random()*10;
+        let ranPos1 = Math.random()*10;
+        let ranPos2 = Math.random()*10;
+        let newTab = window.open("","","width=50px, height=50px");
+
+        setInterval(function(){
+            newTab.moveTo(ranPos1, ranPos2);
+        }, ranTime*1000);
+    </script>
+</head>
+<body>
+</body>
+</html>
