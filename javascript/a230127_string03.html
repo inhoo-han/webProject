@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String 객체</title>
+    <script>
+        // let tel = prompt("당신의 전화번호는?");
+        // let result = "전화번호 : " + tel.slice(0, -4) + "****";
+        // document.write(result);
+
+        /* 쌤 정답 */
+        // let resultT = "전화번호 : " + tel.substring(0, tel.lenght-4) + "****"; 
+
+        let check1 = false;     //@여부를 판단
+        let check2 = false;     //url여부를 판단
+        let arrUrl = [".co.kr", ".com", ".net", ".or.kr", ".go.kr"];        //url배열
+        let email = prompt("이메일 주소를 입력하세요");
+        if(email.indexOf("@") > 0) {
+            check1 = true;
+        }
+        for(let i = 0; i < arrUrl.length; i++ ){
+            if(email.indexOf(arrUrl[i]) > 0) {
+                check2 = true;
+                break;
+            }
+        }
+        if(check1 && check2){
+            document.write("당신의 이메일 주소 " + email + " 으로 스팸메일을 보내겠습니다.");
+        } else {
+            alert("이메일 형식이 잘못되었습니다.");
+        }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

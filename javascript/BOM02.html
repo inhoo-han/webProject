@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>브라우저 객체 모델(BOM)</title>
+    <script>
+        let child = window.open("", "", "width=600, height=300")/*=객체정보*/;
+        let width = screen.width;           //내 디스플레이 해상도 중 가로값
+        let height = screen.height;         //내 디스플레이 해상도 중 세로값
+        setInterval(function() {
+            child.moveBy(10, 10);
+            child.resizeBy(-20, -20);
+        }, 1000);
+        if(child){
+            child.resizeTo/*절대크기*/(width, height);       //팝업 차단 되어있으면 에러나기 때문에 if문 안으로
+            child.moveTo(0,0);
+            child.document.write("<h2>공지사항</h2>");
+            child.document.write("<p>월요일부터 문서 객체 모델(DOM) 나갑니다.</p>")
+            child.document.write("<p>개인 홈페이지 제작도 각자 시작합니다😎</p>")
+        } else{
+            alert("팝업 차단 해제 요망");
+        }
+    </script>
+</head>
+<body>
+    <h1>길동이 바보😛</h1>
+</body>
+</html>

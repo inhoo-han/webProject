@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String 객체</title>
+    <script>
+        let str1 = "hello javascript";
+        /* slice */
+        let str2 = str1.slice(3, 7);
+        let str3 = str1.slice(3,-3);
+        /* substring */
+        let str4 = str1.substring(5);
+        /* substr */
+        let str5 = str1.substr(2,2);
+        /* split */
+        let str7 = "html#css#javascript";
+        let arr = str7.split("#");
+        /* toLowerCase */
+        let alpha = "HTML";
+        let str8 = alpha.toLowerCase();
+        /* concat */
+        let str9 = "자바 웹개발자반";
+        let constr = str9.concat(9);
+        alert(constr);
+        /* charCodeAt, fromCharCode */
+        let asc = "ABC";
+        // alert(asc.charCodeAt(0));
+        // alert(String.fromCharCode(65));
+        /* trim */
+        let h = " hello ";
+        alert(h.trim());
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
