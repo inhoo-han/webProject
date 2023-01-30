@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문서객체모델(DOM)</title>
+    <script>
+        window.onload = function() {
+            let head2 = document.createElement("h2");
+            let textNode = document.createTextNode("문서객체모델 배우는 중");
+            head2.appendChild(textNode);
+            document.body.appendChild(head2);
+            let image = document.createElement("img");
+            image.src = "images/Penguins.jpg";
+            image.width = 500;                          //JavaScript에서는 단위 적지 않는다.
+            image.height = 300;
+            image.alt = "펭귄";
+            /*웹표준이 지원되지 않는 브라우저일 경우*/
+            // image.setAttribute("src","image/Penguins.jpg");
+            // image.setAttribute("width", 500);
+            // image.setAttribute("height", 300);
+            // image.setAttribute("alt", "펭귄");
+            document.body.appendChild(image);
+        }
+    </script>
+</head>
+<body>
+    <h1>JavaScript</h1>
+</body>
+</html>

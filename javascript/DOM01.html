@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문서객체모델(DOM)</title>
+    <script>
+        window.onload = function() {
+            let h = document.querySelector("#head");
+            setTimeout(function(){
+                h.innerHTML = "DOM을 배우기 시작!";
+                h.style.color = "salmon";
+            }, 3000);
+        }
+    </script>
+</head>
+<body>
+    <h1 id="head">JavaScript</h1>
+</body>
+</html>

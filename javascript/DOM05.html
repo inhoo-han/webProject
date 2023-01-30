@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문서객체모델(DOM)</title>
+    <script>
+        window.onload = function() {
+            let contents = ["Welcome😀", "Document Object Model"]
+            // let head = document.getElementsByTagName("h1");
+            // let head = document.getElementsByClassName("header");
+            let head = document.querySelectorAll("h1");
+            for(let i = 0; i < head.length; i++){
+                head[i].innerHTML = contents[i];
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1 class="header">Hello!</h1>
+    <h1 class="header">Brower Object Model</h1>
+</body>
+</html>

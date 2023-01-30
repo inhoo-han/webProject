@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문서객체모델(DOM)</title>
+    <script>
+        let onoff = false;
+        let detail;
+        window.onload = function() {
+            detail = document.querySelector("#content .detail");
+            detail.style.visibility = 'hidden';
+        }
+        function showHide(){
+            onoff = !onoff;
+            if(onoff){
+                detail.style.visibility = 'visible';
+            }else{
+                detail.style.visibility = 'hidden';
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="content">
+        <h2>상품정보</h2>
+        <ul>
+            <li>상품명 : 휴대용 손난로</li>
+            <li>가격 : 20,000원</li>
+            <li>제조사 : 가나전자</li>
+        </ul>
+        <h3 onclick="showHide()">상품 상세 설명</h3>
+        <p class="detail">
+            예쁘고, 3단 조절 되고, 보조배터리 기능까지 있는!
+            가나전자의 획기적인 신제품, 휴대용 손난로
+            두 시간 충전하면 가장 낮은 온도로 여섯 시간 지속 가능
+        </p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문서객체모델(DOM)</title>
+    <style>
+        #rect{
+            width: 150px;
+            height: 150px;
+            border: 1px dashed black;
+            margin-left: 100px;
+            transition: all 1s;
+
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            let pic = document.querySelector("#pic");
+            let myRect = document.querySelector("#rect");
+            pic.addEventListener("mouseover", newPic);
+            pic.addEventListener("mouseout", originPic);
+            myRect.addEventListener("mouseover", function() {
+                this.style.backgroundColor = "green";
+                this.style.borderRadius = "50%";
+                this.style.transition = "1s ease";
+            });
+            myRect.addEventListener("mouseout", function() {
+                this.style.backgroundColor = "";
+                this.style.borderRadius = "";
+            });
+        }
+        function newPic() {
+            pic.src = "images/boy.png";
+            pic.style.height = "375px";
+        }
+        function originPic() {
+            pic.src = "images/girl.png";
+        }
+    </script>
+</head>
+<body>
+    <img src="images/girl.png" alt=""  id="pic">
+    <div id="rect"></div>
+</body>
+</html>

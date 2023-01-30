@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문서객체모델(DOM)</title>
+    <script>
+        let canvasWidth = 1700;
+        let cnavasHeight = 1400;
+        //생성자 함수
+        function MovingText() {
+            /*field*/
+            //위치
+            this.x = randomNumber(canvasWidth);         //0~700
+            this.y = randomNumber(cnavasHeight);        //0~400
+            //속도 속성
+            this.vx = randomSpeed(10);
+            this.vy = randomSpeed(10);
+            //내가 만든 사이즈 속성
+            this.fontSize = Math.random()*50+20;
+            this.color = Math.round(Math.random()*255);
+            //객체 속성
+            this.head = document.createElement('h1');
+            this.head.innerHTML = randomAlphabet();
+            this.head.style.position = "absolute";
+            document.body.appendChild(this.head);
+        }
+        //프로토타입
+        //↓기존함수  ↓프로토타입 ↓메소드(기능)
+        MovingText.prototype.move = function() {
+            if(this.x < 0 || this.x > canvasWidth){
+                this.vx *= -1;          //왜 -1을 곱하지?
+            }
+            if(this.y < 0 || this.y > cnavasHeight){
+                this.vy *= -1;
+            }
+            //이동
+            this.x += this.vx;
+            this.y += this.vy;
+            //화면에 표시
+            this.head.style.left = this.x + "px";
+            this.head.style.top = this.y + "px";
+            this.head.style.fontSize = this.fontSize + "px";
+            // this.head.style.color = "rgb("
+        }
+        //일반 함수
+        function randomNumber(limit) {
+            return Math.round(Math.random()*limit);
+        }
+        function randomSpeed(maxSpeed) {
+            return Math.random()*maxSpeed - Math.random()*maxSpeed;
+        }
+        // function randomAlphabet() {
+        //     // let alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        //     return alphabet.charAt(randomNumber(25));
+        // }
+        /*클로저*/
+        let randomAlphabet = (function() {
+            let alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            return function() {
+                return alphabet.charAt(randomNumber(25));
+            }
+        })();
+
+        window.onload = function() {
+            let MovingTexts = [];
+            for(let i = 0; i < 100; i++){
+                MovingTexts.push(new MovingText());
+            }
+            setInterval(function() {
+                for(let i in MovingTexts){
+                    MovingTexts[i].move();
+                    
+                }
+            }, 1000/60);
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

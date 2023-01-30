@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문서객체모델(DOM)</title>
+    <script>
+        window.onload = function() {
+            let body = document.querySelector("body");
+            body.style.backgroundColor = "black";
+            let earthAngle = 0;
+            let moonAngle = 0;
+            let sun = document.getElementById("sun");
+            let earth = document.getElementById("earth");
+            let moon = document.getElementById("moon");
+            sun.style.position = "absolute";
+            earth.style.position = "absolute";
+            moon.style.position = "absolute";
+            sun.style.left = "250px";
+            sun.style.top = "250px";
+            setInterval(function() {
+                let earthLeft = 250 + 150*Math.cos(earthAngle);
+                let earthTop = 250 + 150*Math.sin(earthAngle);
+                let moonLeft = earthLeft + 50*Math.cos(moonAngle);
+                let moonTop = earthTop + 50*Math.sin(moonAngle);
+                //위치 이동
+                earth.style.left = earthLeft + "px";
+                earth.style.top = earthTop + "px";
+                moon.style.left = moonLeft + "px";
+                moon.style.top = moonTop + "px";
+                earthAngle -= 0.01;
+                moonAngle -= 0.1;
+            }, 1000/30);
+        }
+    </script>
+</head>
+<body>
+    <h1 id="sun">🌞</h1>
+    <h1 id="earth">🌏</h1>
+    <h1 id="moon">🌛</h1>
+</body>
+</html>

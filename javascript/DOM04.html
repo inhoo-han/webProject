@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문서객체모델(DOM)</title>
+    <script>
+        window.onload = function() {
+            // let head1 = document.getElementById("head1");
+            // let head2 = document.getElementById("head2");
+            let head1 = document.querySelector("#head1");
+            let head2 = document.querySelector("#head2");
+            head1.innerHTML = "Welcome😊";
+            head2.innerHTML = "Document Object Model";
+        }
+    </script>
+</head>
+<body>
+    <h1 id="head1">Hello!</h1>
+    <h1 id="head2">Brower Object Model</h1>
+</body>
+</html>

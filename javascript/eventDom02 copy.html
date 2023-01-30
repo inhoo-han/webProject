@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문서객체모델(DOM)</title>
+    <style>
+        #rect{
+            width: 300px;
+            height: 300px;
+            border: 1px dashed black;
+
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            let pic = document.querySelector("#pic");
+            let myRect = document.querySelector("#rect");
+            let picLeft = 0;
+            let picTop = 0;
+            let count = 0;
+            pic.addEventListener("click", function() {
+                this.style.position = "relative";
+                let go = setInterval(() => {
+                    this.style.left = picLeft + "px";
+                    picLeft += 10;
+                    count += 1;
+                    if(count == 30) {
+                        clearInterval(go);
+                        count = 0;
+                        let down = setInterval(() => {
+                            pic.src = "images/girl.png";
+                            this.style.top = picTop + "px";
+                            picTop -= 10;
+                            count += 1;
+                            if(count == 50){
+                                clearInterval(down);
+                            }
+                        }, 100);
+                    }
+                }, 100);
+            });
+           
+            myRect.addEventListener("mouseover", function() {
+                this.style.backgroundColor = "green";
+                this.style.borderRadius = "50%";
+                this.style.transition = "1s ease";
+            });
+            myRect.addEventListener("mouseout", function() {
+                this.style.backgroundColor = "";
+                this.style.borderRadius = "";
+            });
+        }
+        function newPic() {
+            pic.src = "images/boy.png";
+            pic.style.height = "375px";
+        }
+        function originPic() {
+            pic.src = "images/girl.png";
+        }
+    </script>
+</head>
+<body>
+    <img src="images/boy.png" alt=""  id="pic">
+    <div id="rect"></div>
+</body>
+</html>
