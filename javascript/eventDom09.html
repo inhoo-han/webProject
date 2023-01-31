@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문서객체모델(DOM)</title>
+    <style>
+       ul{
+        list-style: none;
+       }
+       li{
+        font-size: 1.5em;
+        line-height: 1.8;
+       }
+       .check{
+        margin-right: 25px;
+        font-size: 1.5em;
+        font-weight: bold;
+        color: #ccc;
+        transition: color 0.5s;
+        cursor: pointer;
+       }
+       li:hover .check{
+        color: #333;
+       }
+    </style>
+    <script>
+        /* 내 풀이 */
+        window.onload = function() {
+            let check = document.getElementsByClassName("check");
+            let li = document.querySelectorAll("li");
+            let count = 0;
+            for(let i = 0; i < check.length; i++){
+                check[i].onclick = function(){
+                    let date = new Date();
+                    let hour = date.getHours();
+                    let min = date.getMinutes();
+                    count++;
+                    alert("임무 완료!👍");
+                    this.style.color = "red";
+                    this.style.cursor = "default";
+                    this.onclick = null;
+                    check[i].innerHTML = count;
+                    li[i].style.color = "#ccc";
+                    // li[i].style.textDecoration = "line-through";
+                    li[i].innerHTML += hour + ":" + min;
+                }
+            }
+        }
+
+        // /* 선생님 풀이 */
+        // window.onload = function() {
+        //     let check = document.querySelectorAll(".check");
+        //     let list = document.querySelectorAll("ul li");
+        //     for(let i = 0; i < list.length; i++){
+        //         check[i].onclick = function(){
+        //             alert("임무 완료!👍");
+        //             this.style.color = "#ccc";
+        //             this.style.cursor = "default";
+        //             this.onclick = null;
+        //             list[i].style.color = "#ccc";
+        //         }
+        //     }
+        // }
+    </script>
+</head>
+<body>
+    <h1>To Do List</h1>
+    <ul>
+        <li><span class="check">&check;</span>집안 청소하기</li>
+        <li><span class="check">&check;</span>개인 홈페이지 제작 하기</li>
+        <li><span class="check">&check;</span>운동은 안 하고 싶은뎅..</li>
+        <li><span class="check">&check;</span>수업 복습하기</li>
+        <li><span class="check">&check;</span>잘 누워있기</li>
+    </ul>
+</body>
+</html>

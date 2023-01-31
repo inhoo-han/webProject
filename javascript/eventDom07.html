@@ -21,7 +21,7 @@
             height: 200px;
             box-shadow: 1px 1px 2px #ccc;
             outline: 1px dashed #ccc;
-            outline-offset: -7px;
+            outline-offset: 10px;
         }
         #small_pic{
             margin-top: 20px;
@@ -73,24 +73,24 @@
             let bigPic = document.querySelector("#prod_pic>img");
             let smallPic = document.querySelectorAll("#small_pic>img");
             //방법1
-            // for(let i = 0; i < smallPic.length; i++){
-            //     smallPic[i].onclick = function() {
-            //         bigPic.src = this.src;
-            //     }
-            // }
-            // //방법2
-            // for(let i = 0; i < smallPic.length; i++){
-            //     smallPic[i].onclick = showPic;
-            // }
+            for(let i = 0; i < smallPic.length; i++){
+                smallPic[i].onclick = function() {
+                    bigPic.src = this.src;
+                }
+            }
+            //방법2
+            for(let i = 0; i < smallPic.length; i++){
+                smallPic[i].onclick = showPic;
+            }
             function showPic() {
                 bigPic.src = this.src;
             }
             //방법3
-            // for(let i = 0; i < smallPic.length; i++){
-            //     smallPic[i].addEventListener("click" ,function() {
-            //         bigPic.src = this.src;
-            //     });
-            // }
+            for(let i = 0; i < smallPic.length; i++){
+                smallPic[i].addEventListener("click" ,function() {
+                    bigPic.src = this.src;
+                });
+            }
             //방법4
             for(let i = 0; i < smallPic.length; i++){
                 smallPic[i].addEventListener("click", showPic);

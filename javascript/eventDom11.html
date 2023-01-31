@@ -1,0 +1,37 @@
+<!-- eventDom09 ver.2 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문서객체모델(DOM)</title>
+    <style>
+      
+    </style>
+    <script>
+        function displaySelect(){
+            // alert("선택 완료💨");
+            let selectMenu = document.testForm.class;
+            let text = selectMenu.options/*option이 여러개라 options래*/[selectMenu.selectedIndex].innerText;
+            /*input태그처럼 사용자가 입력하는 경우에는 value로 값을 가져옴. 이번 경우에는 값이 이미 다 적혀있기 때문에 innerText로 가져올 수 있다.*/
+            alert(text + "를 선택하셨습니다.");
+        }
+    </script>
+</head>
+<body>
+    <form name="testForm">
+        <p>
+            <label>학과</label>
+            <select name="class" id="class" onchange="displaySelect();">
+                <option value="archi">건축공학과</option>
+                <option value="mechanic">기계공학과</option>
+                <option value="indust">산업공학과</option>
+                <option value="elec">전기전자공학과</option>
+                <option value="computer">컴퓨터공학과</option>
+                <option value="astro">천문우주학과</option>
+            </select>
+        </p>
+    </form>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!-- eventDom09 ver.2 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문서객체모델(DOM)</title>
+    <style>
+      *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      ul{
+        list-style: none;
+      }
+      legend{
+        font-size: 1.2em;
+        font-weight: bold;
+        margin-left: 20px;
+      }
+      form{
+        width: 520px;
+        padding-left: 10px;
+        margin: 50px auto;
+      }
+      fieldset{
+        border: 1px solid slateblue;
+        padding: 30px 20px 30px 30px;
+        margin-bottom: 35px;
+      }
+      .field{
+        /* float: left; */
+        width: 60px;
+        font-weight: bold;
+        font-size: 0.9em;
+        line-height: 55px;
+        /* text-align: right; */
+        margin-right: 15px;
+      }
+      .input-box{
+        width: 320px;
+        height: 35px;
+        border: 1px solid #aaa;
+        border-radius: 5px;
+        padding: 5px;
+        margin: 10px 0;
+        float: right;
+      }
+    </style>
+    <script>
+        /* 선생님 풀이 */
+        window.onload = function() {
+            let check = document.querySelector("#shippingInfo");
+            check.addEventListener("click", function() {
+                if(this.checked == true){
+                    //  쉽 안에↓   ↓이 이름      ↓값  ↓대입       ↓오더안에 ↓이 이름  ↓값
+                    document.ship.shippingName.value = document.order.billingName.value;
+                    document.ship.shippingTel.value = document.order.billingTel.value;
+                    document.ship.shippingAddr.value = document.order.billingAddr.value;
+                } else{
+                    document.ship.shippingName.value = "";
+                    document.ship.shippingTel.value = "";
+                    document.ship.shippingAddr.value = "";
+                }
+            })
+        }
+    </script>
+</head>
+<body>
+    <div id="container">
+        <form name="order">
+            <fieldset>
+                <legend>주문정보</legend>
+                <ul>
+                    <li>
+                        <label for="billingName" class="field">이름 : </label>
+                        <input type="text" class="input-box" id="billingName" name="billingName">
+                    </li>
+                    <li>
+                        <label for="billingTel" class="field">연락처 : </label>
+                        <input type="text" class="input-box" id="billingTel" name="billingTel">
+                    </li>
+                    <li>
+                        <label for="billingAddr" class="field">주소 : </label>
+                        <input type="text" class="input-box" id="billingAddr" name="billingAddr">
+                    </li>
+                </ul>
+            </fieldset>
+        </form>
+        <form name="ship">
+            <fieldset>
+                <legend>배송정보</legend>
+                <ul>
+                    <li>
+                        <input type="checkbox" id="shippingInfo" name="shippingInfo">
+                        <label for="shippingInfo" class="check">주문 정보와 배송 정보가 같습니다.</label>
+                    </li>
+                    <li>
+                        <label for="shippingName" class="field">이름 : </label>
+                        <input type="text" class="input-box" id="shippingName" name="shippingName">
+                    </li>
+                    <li>
+                        <label for="shippingTel" class="field">연락처 : </label>
+                        <input type="text" class="input-box" id="shippingTel" name="shippingTel">
+                    </li>
+                    <li>
+                        <label for="shippingAddr" class="field">주소 : </label>
+                        <input type="text" class="input-box" id="shippingAddr" name="shippingAddr">
+                    </li>
+                </ul>
+            </fieldset>
+        </form>
+    </div>
+</body>
+</html>
