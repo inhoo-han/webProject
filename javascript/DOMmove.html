@@ -29,6 +29,11 @@
                 earth.style.top = earthTop + "px";
                 moon.style.left = moonLeft + "px";
                 moon.style.top = moonTop + "px";
+                moon.style.transform = "scale(0.7)";
+                sun.style.transform = "scale(1.7)";
+                sun.style.transform = "rotate(" + moonAngle*10 + "deg)";
+                earth.style.transform = "rotate(" + earthAngle*100 +"deg)";
+                moon.style.transform = "rotate(" + (moonAngle)*100 + "deg)";
                 earthAngle -= 0.01;
                 moonAngle -= 0.1;
             }, 1000/30);
@@ -38,6 +43,6 @@
 <body>
     <h1 id="sun">🌞</h1>
     <h1 id="earth">🌏</h1>
-    <h1 id="moon">🌛</h1>
+    <h1 id="moon">🌓</h1>
 </body>
 </html>

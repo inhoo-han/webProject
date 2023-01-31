@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문서객체모델(DOM)</title>
+    <style>
+        #head{
+            cursor: pointer;
+        }
+    </style>
+    <script>
+       window.onload = function() {
+        document.getElementById("head").onclick = function() {
+            alert('Hello');
+        };
+        let head = document.getElementById("head");
+        let count = 0;
+        head.onclick = function() {
+            count++;
+            if(count > 3){
+                alert("이벤트 처리 종료");
+                head.innerHTML = "이벤트 처리 완료!!";
+                head.onclick = null;
+                head.style.cursor = "default";
+                head.style.color = "#ccc";
+            } else{
+                alert(count + "번 째 이벤트 처리중 . . .");
+            }
+        }
+       }
+    </script>
+</head>
+<body>
+    <h1 id="head">이벤트 처리</h1>
+</body>
+</html>
