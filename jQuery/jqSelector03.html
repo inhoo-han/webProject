@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제이쿼리</title>
+    <script src="js/jquery-3.6.3.min.js"></script>
+    <script>
+        $(function() {
+            // $('#box2>p').css('color', 'navy');
+            // $('#box2 p').css('color', 'navy');
+            // $('.item').parent().css('color', 'red');
+            // $('li').css('color', 'red');
+            // $('li').css('border', '1px solid navy');
+            // $('ul').children().css('border','1px solid navy');
+            // $('#grandBaby').parents().css('border','1px solid navy');
+            // $('#grandBaby').closest('div').css('border','1px solid navy');
+            // $(".item").nextAll().css('color','red');
+            // $(".item").prevUntil('p').css('color','red');
+            $(".item").siblings().css('color','red');
+        });
+    </script>
+</head>
+<body>
+    <h1>자식선택자와 후손선택자</h1>
+    <div id="box1">
+        <h2>나는 제목1</h2>
+        <p>자식 선택자 공부</p>
+    </div>
+    <div id="box2">
+        <h2>나는 제목1</h2>
+        <p class="item">자식 선택자 공부</p>
+        <div>제목의 동생
+            <p>나는 손자</p>
+        </div>
+    </div>
+    <ul> 나는부모
+        <li class="item">김치찌개</li>
+        <li>부대찌개</li>
+        <li>막국수</li>
+        <p>걍 넣어봤슈</p>
+        <div>ul의 자식임
+            <p id="grandBaby">ul의 손자임</p>
+        </div>
+    </ul>
+</body>
+</html>

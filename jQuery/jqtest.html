@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제이쿼리</title>
+    <script src="js/jquery-3.6.3.min.js"></script>
+    <!-- CDN방식 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script> -->
+    <script>
+        /* 바닐라 자바스크립트 */
+        // window.onload = function() {
+        //     let head = document.querySelectorAll("h1");
+        //     for(let i = 0; i < head.length; i++){
+        //         head[i].onclick = function() { //addEventListener로도 할 수 있다. 
+        //         this.innerHTML = "코로나 퇴치 완료"
+        //         this.style.color = "red";
+        //         this.style.transition = "all 1s";
+        //         }
+        //     }
+        // }
+
+        // window.onload = function() {
+        //     let head = document.querySelectorAll("h1");
+        //     for(let i = 0; i < head.length; i++){
+        //         head[i].addEventListener("click", function(){
+        //             this.innerHTML = "코로나 퇴치 완료"
+        //             this.style.color = "red";
+        //             this.style.transition = "all 1s";
+        //         }) //addEventListener로도 할 수 있다. 
+        //     }
+        // }
+
+        /* jQuery */
+        //$(document).ready(function(){});    ==     window.onload = function() {}
+        // ==
+        $(function() {
+            $('h1').click(function() {
+                $(this).html('코로나 퇴치 완료!!').css/*스타일을 제어하는 메소드*/('color','red');
+            })
+        });
+    </script>
+</head>
+<body>
+    <h1>서울 지역 코로나</h1>
+    <h1>경기 지역 코로나</h1>
+    <img src="images/car_green.jpg" alt="car_green">
+</body>
+</html>

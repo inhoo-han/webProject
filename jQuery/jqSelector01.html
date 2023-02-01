@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제이쿼리</title>
+    <script src="js/jquery-3.6.3.min.js"></script>
+    <script>
+        $(function() {
+            /* 1) 전체 선택자 */
+            //    $('*').css('color', 'red');
+            /* 2) 태그 선택자 */
+            //    $('body').css('color', 'red');
+            // $('p').css('background-color','lightyellow');
+            // $('li>p').css('background-color','white');
+            /* 3) 아이디,클래스 선택자 */
+            // $('#target').css('border','1px solid navy');
+            // $('.item').css('color', 'blue');
+            // $('.select').css('background-color', 'lightblue');
+            /* 4) 중복 선택자 */
+            // $('.item.select').css('background-color', 'lightgreen');
+            // $('p.item').css('color','blue');
+            /* 5) 다중 선택자 */
+            // $('h1, #target').css('color','salmon');
+            $('p').hover(function() {
+                $(this).css('color', 'red');
+                $(this).css('font-size', '1.2em');
+            }
+            , function() {
+                $(this).css('color', 'black');
+                $(this).css('font-size', '1em');
+            })
+
+            $('#wt').hover(function(){
+                $(this).html("쉬는시간!");
+            }, function() {
+                $(this).html("지금은 무슨 시간?");
+                $('#wt').hover(function(){
+                    $(this).html("쉬는시간이라니까~!!");
+                }, function(){
+                    $(this).html("지금은 무슨 시간?");
+                    $('#wt').hover(function() {
+                        $(this).html("걍 쉬어");
+                    }, function() {
+                        $(this).html("지금은 무슨 시간?");
+                        $('#wt').hover(function() {
+                            $(this).html("쉬지마");
+                        }, function() {
+                            $(this).html("지금은 무슨 시간?");
+                        })
+                    })
+                })
+            })
+        });
+    </script>
+</head>
+<body>
+    <h1 id="wt">지금은 무슨 시간?</h1>
+    <h1>jQuery</h1>
+    <p class="item">자바스크립트로 만들어진 라이브러리</p>
+    <ul>
+        <li>1. 선택자
+            <p>css에서 해당 태그, 아이디, 클래스 지정했던 것 해봤으니 쉬울 것이다.</p>
+        </li>
+        <li>2. 메서드
+            <p>아직까지는 html, css 메소드만 배웠다.</p>
+        </li>
+        <li class="item">3. 이벤트</li>
+        <li class="select">4. 애니메이션
+            <p>메인페이지 이미지 움직이는 것 등</p>
+        </li>
+        <li>5. 플러그인
+            <p>플러그인에는 독이 있다. 얘를 쓰면 너무 편해서 명령기술 쓰는 것을 잊을 수도 있다. 
+                sin,cos처럼 어려운 내용일 때만 사용하길 권장하신다. 플러그만 꽂으면 되는 원리. 
+            </p>
+        </li>
+        <li>6. 실무응용기술
+            <p>jQuery + JS</p>
+        </li>
+    </ul>
+    <p id="target">개인 홈페이지 제작 시간</p>
+    <p class="item select">html, css, javaScript</p>
+</body>
+</html>

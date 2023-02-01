@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제이쿼리</title>
+    <script src="js/jquery-3.6.3.min.js"></script>
+    <script>
+        $(function() {
+            $('h1').hover(function() {
+                // $(this).css('color', 'red').css('background-color', 'yellow').css('border','3px solid blue');
+                $(this).css({
+                    color : 'red',
+                    backgroundColor : 'yellow',
+                    border : '3px solid blue'
+                })
+            }, function() {
+                // $(this).css('color', 'black').css('background-color', 'white').css('border','none');
+                $(this).css({
+                    color : 'black',
+                    backgroundColor : 'white',
+                    border : 'none'
+                })
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>html - 뼈대 구축</h1>
+    <h1>css - 디자인, 레이아웃</h1>
+    <h1>javaScript - 동적인 웹페이지</h1>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제이쿼리</title>
+    <script src="js/jquery-3.6.3.min.js"></script>
+    <script>
+        $(function() {
+        //    $('li:eq(0)').css('color','red');
+        //    $('li:eq(-1)').css('color','red');
+        //    $('li:contains(표범)').css('color','red');
+        //    $('li:gt(3)').css('color','red');
+        //    $('li:lt(3)').css('color','red');
+            $('li:nth-child(2n+1)').css('color','red');
+            $('tr:eq(0)').css({
+                color: '#fff',
+                background: '#000',
+                fontSize: '20px'
+            });
+            $('td:nth-child(3n+1)').css('background','blue').css('color','#fff');
+            $('td:nth-child(3n+2)').css('background','orange').css('color','#fff');
+            $('td:nth-child(3n)').css('background','brown').css('color','#fff');
+
+        });
+    </script>
+</head>
+<body>
+    <h2>동물의 세계</h2>
+    <ul>
+        <li>사자</li>
+        <li>기린</li>
+        <li>표범</li>
+        <li>홍학</li>
+        <li>악어</li>
+        <li>상어</li>
+        <li>왕밤빵</li>
+    </ul>
+    <h2>혈액형 조사</h2>
+    <table>
+        <tr>
+            <th>이름</th>
+            <th>혈액형</th>
+            <th>지역</th>
+        </tr>
+        <tr><td>김철수</td> <td>RH+ O형</td><td>서울시 용산구</td></tr>
+        <tr><td>이영희</td> <td>RH- A형</td><td>서울시 중구</td></tr>
+        <tr><td>홍길동</td> <td>RH+ AB형</td><td>서울시 영등포구</td></tr>
+        <tr><td>이영표</td> <td>RH+ B형</td><td>서울시 강남구</td></tr>
+        <tr><td>박찬호</td> <td>RH+ A형</td><td>서울시 종로구</td></tr>
+        <tr><td>손흥민</td> <td>RH- O형</td><td>서울시 노원구</td></tr>
+    </table>
+</body>
+</html>
