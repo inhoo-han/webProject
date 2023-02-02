@@ -12,18 +12,20 @@
     <script>
         $(function() {
             let image = ['images/box2.png', 'images/lightbulb.png', 'images/웃는사람.png'];
-            let imageOrigin = ['images/box1.png', 'images/lightbulb1.png', 'images/우는사람.png'];
+            // let imageOrigin = ['images/box1.png', 'images/lightbulb1.png', 'images/우는사람.png'];
             
             let index;
+            let imageSrc = '';
             
             $('img').hover(function() {
                 index = $(this).index();
                 $(this).attr('src', function() {
+                    imagesSrc = $(this).attr('src');
                     return image[index];
                 })
             }, function() {
                 $(this).attr('src', function(){
-                    return imageOrigin[index]; 
+                    return imagesSrc; 
                 
                 })
             });
