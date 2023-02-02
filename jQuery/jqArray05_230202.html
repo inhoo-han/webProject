@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제이쿼리</title>
+    <script src="js/jquery-3.6.3.min.js"></script>
+    <style>
+        .high_light0 { background-color: lightcoral;}
+        .high_light1 { background-color: lightsalmon;}
+        .high_light2 { background-color: lightgoldenrodyellow;}
+        .high_light3 { background-color: lightgreen;}
+        .high_light4 { background-color: lightskyblue;}
+        .high_light5 { background-color: lightblue;}
+        .high_light6 { background-color: lightslategray;}
+    </style>
+    <script>
+        $(function() {
+            $('h1').each(function(index) {
+                $(this).hover(function() {
+                    $(this).addClass('high_light' + index);
+                }, function() {
+                    $(this).removeClass();
+                });
+            });
+            /* 선생님 풀이 */
+            // let index;
+            // $('h1').hover(function() {
+            //     index = $(this).index();        //인덱스 얻어오기~!
+            //     $(this).addClass('high_light' + index);
+            // }, function() {
+            //     $(this).removeClass('high_light' + index);
+            // })
+        });
+
+        
+    </script>
+</head>
+<body>
+    <h1>제이쿼리</h1>
+    <h1>선택자</h1>
+    <h1>메서드</h1>
+    <h1>이벤트</h1>
+    <h1>애니메이션</h1>
+    <h1>실무응용기술</h1>
+    <h1>플러그인</h1>
+</body>
+</html>

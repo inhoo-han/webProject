@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제이쿼리</title>
+    <script src="js/jquery-3.6.3.min.js"></script>
+    <style>
+    </style>
+    <script>
+        $(function() {
+            let color = ['lightcoral', 'lightsalmon','lightyellow','lightgreen','lightskyblue','lightblue','lightgray'];
+            /* each */
+            // $.each(color, function(index, item) {
+            //     $('h1').eq(index).css('background', item);
+            // })
+            /* 반복문 */
+            // for(let i = 0; i < 7; i++){
+            //     // $('h1').eq(i).css('background', color[i]);
+            //     $('h1:eq('+i+')').css('background', color[i]);
+            // }
+            /* 반복문 익명함수 사용 */
+            // for(let i = 0; i < 7; i++){
+            //     $('h1').eq(i).css('background', function(){
+            //         return color[i];
+            //     });
+            //     // $('h1:eq('+i+')').css('background', color[i]);
+            // 
+            $('h1').css({
+                color: function(index){
+                    return color[index];
+                },
+                background: function(index){
+                    if(index == (6-index)){
+                        return 'white'
+                    } else{
+                    return color[6-index];
+                    }
+                },
+                // border: '1px solid gray',
+                borderRadius: '10px'
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>제이쿼리</h1>
+    <h1>선택자</h1>
+    <h1>메서드</h1>
+    <h1>이벤트</h1>
+    <h1>애니메이션</h1>
+    <h1>실무응용기술</h1>
+    <h1>플러그인</h1>
+</body>
+</html>

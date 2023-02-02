@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제이쿼리</title>
+    <script src="js/jquery-3.6.3.min.js"></script>
+    <script>
+        $(function() {
+            $('li:only-child').css('background-color', "#ff0");
+            $('#target>li').slice(1,3).css('background-color',"#f0f");
+        });
+    </script>
+</head>
+<body>
+    <h2>육지 동물의 세계</h2>
+    <ul id="target">
+        <li>사자</li>
+        <li>기린</li>
+        <li>표범</li>
+        <li>왕밤빵</li>
+    </ul>
+    <h2>바다 동물의 세계</h2>
+    <ul>
+        <li>악어</li>
+        <li>상어</li>
+        <li>고래</li>
+        <li>페르시아비단벌레</li>
+    </ul>
+    <h2>하늘 동물의 세계</h2>
+    <ul>
+        <!-- <li>도도새</li>
+        <li>키위새</li>
+        <li>펠리컨</li> -->
+        <li>대머리독수리</li>
+    </ul>
+    
+</body>
+</html>
