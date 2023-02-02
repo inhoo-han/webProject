@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제이쿼리</title>
+    <script src="js/jquery-3.6.3.min.js"></script>
+    <style>
+        .item{
+            background-color: lightsalmon;
+        }
+        .select{
+            border: 1px solid red;
+        }
+    </style>
+    <script>
+        $(function() {
+            setTimeout(() => {
+                // $('.select').css('border','none');
+                $('h1').removeClass('select');    
+                // alert($('h1.item').attr('background-color'));
+            }, 5000);
+        });
+    </script>
+</head>
+<body>
+    <h1 class="item">제이쿼리</h1>
+    <h1 class="item">선택자</h1>
+    <h1 class="item select">메서드</h1>
+    <h1>이벤트</h1>
+    <h1 class="select">애니메이션</h1>
+    <h1>실무응용기술</h1>
+    <h1>플러그인</h1>
+</body>
+</html>

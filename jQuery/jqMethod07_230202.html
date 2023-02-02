@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제이쿼리</title>
+    <script src="js/jquery-3.6.3.min.js"></script>
+    <style>
+       
+    </style>
+    <script>
+        $(function() {
+            let image = ['images/box2.png', 'images/lightbulb.png', 'images/웃는사람.png'];
+            let imageOrigin = ['images/box1.png', 'images/lightbulb1.png', 'images/우는사람.png'];
+            
+            let index;
+            
+            $('img').hover(function() {
+                index = $(this).index();
+                $(this).attr('src', function() {
+                    return image[index];
+                })
+            }, function() {
+                $(this).attr('src', function(){
+                    return imageOrigin[index]; 
+                
+                })
+            });
+        });
+    </script>
+</head>
+<body>
+    <img src="images/box1.png" alt="box1" width="100px">
+    <img src="images/lightbulb1.png" alt="lightbulb1">
+    <img src="images/우는사람.png" alt="우는사람">
+</body>
+</html>

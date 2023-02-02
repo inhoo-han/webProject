@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제이쿼리</title>
+    <script src="js/jquery-3.6.3.min.js"></script>
+    <style>
+       
+    </style>
+    <script>
+        $(function() {
+            let s = $('img').attr('src');
+            // alert(s);
+            $('img').attr({
+                width: function(index) {
+                    return (index+1)*200;
+                },
+                height: 350               
+            });
+
+        });
+    </script>
+</head>
+<body>
+    <img src="images/Koala.jpg" alt="Koala" >
+    <img src="images/Penguins.jpg" alt="penguins">
+    <img src="images/Lighthouse.jpg" alt="lighthouse">
+</body>
+</html>
