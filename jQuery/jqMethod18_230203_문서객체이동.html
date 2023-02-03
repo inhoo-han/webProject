@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문서객체이동</title>
+    <script src="js/jquery-3.6.3.min.js"></script>
+    <style>
+        #images{
+            width: 250px;
+            height: 150px;
+            overflow: hidden;
+        }
+    </style>
+    <script>
+        $(function() {
+            $('#images>img').css('width',200);
+            setInterval(function() {
+                $('#images>img').first().appendTo('#images');
+            }, 2000);
+        });
+    </script>
+</head>
+<body>
+    <h1>문서 객체 이동</h1>
+    <div id="images">
+        <img src="images/Koala.jpg" alt="Koala">
+        <img src="images/Tulips.jpg" alt="Tulips">
+        <img src="images/Lighthouse.jpg" alt="Lighthouse">
+        <img src="images/Penguins.jpg" alt="Penguins">
+        <img src="images/Jellyfish.jpg" alt="Jellyfish">
+    </div>
+</body>
+</html>

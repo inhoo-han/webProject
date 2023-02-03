@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문서객체생성</title>
+    <script src="js/jquery-3.6.3.min.js"></script>
+    <style>
+        
+    </style>
+    <script>
+        $(function() {
+            /* 생성자 기본 */
+            // $('<h1></h1>');          //[1]h1객체를 만들었다. 
+            // $('<h1></h1>').html('나는 생성된 객체');    //[2]이렇게만 하면 보이지 않는다. 왜? 기존 노드에 추가하지 않았기 때문
+            $('<h1></h1>').html('나는 생성된 객체').appendTo('body');       //[3] 노드를 연결시켰다.
+
+            $('<h2>남극펭귄 귀여워</h2>').appendTo('body');
+            $('<img>').attr({
+                src: 'images/Penguins.jpg',
+                alt: 'Penguins',
+                width: 500,
+                height: 350
+            }).appendTo('#festival');
+
+            let content = ['금욜 쉅', '문서 객체 생성 쉅', '홈페이지 제작은 쭈욱~~'];
+            for(let i = 0; i < content.length; i++){
+                $('<p></p>').html(content[i]).appendTo('#festival');
+                // $('<p></p>').html(content[i]).prependTo('#festival');
+            }
+            $('<h1>🎿겨울축제🛷</h1>').prependTo('#festival');
+            // $('<h1>🎿겨울축제🛷</h1>').insertAfter('#festival');
+
+            $('<h2>🎿나는 어디에 추가될까?🛷</h2>').insertAfter('#festival');
+            $('<h2>🎿나는 어디에 추가될까?🛷</h2>').insertBefore('#festival');
+            $('<h2>나는 외톨이. . .😥</h2>').insertBefore('body');
+            $('<h2>나는 외톨이. . .2😥</h2>').insertAfter('head');
+
+        });
+    </script>
+</head>
+<body>
+    <h1>문서 객체 생성</h1>
+    <div id="festival">
+
+    </div>
+</body>
+</html>

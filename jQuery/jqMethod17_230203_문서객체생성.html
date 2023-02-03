@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문서객체생성</title>
+    <script src="js/jquery-3.6.3.min.js"></script>
+    <style>
+        
+    </style>
+    <script>
+        $(function() {
+            let title = "<h2>⛄Winter Festival⛄</h2>";     //변수
+            let sub = "<p>이번 축제는 코로나로 인해 인원수 제한이 있습니다.</p>"
+            $('#festival').append(title,sub);
+            let content = [
+                {name: 'Chul-su Kim', address: 'Jongro-gu, Seoul'},
+                {name: 'Young-hee Lee', address: 'Youngdeungpo-gu, Seoul'},
+                {name: 'Gil-dong Hong', address: 'Gangnam-gu, Seoul'}
+            ];
+            $('#address>div').append(function (index) {
+                let item = content[index];
+                let output = '';
+                output += '<h2>' + item.name + '</h2>';
+                output += '<p>' + item.address + '</p>';
+                return output;
+            });
+            $('#address>div').css({
+                border: '1px solid blue',
+                'margin-bottom': '10px',
+                padding: 10,
+                cursor: 'pointer'
+            })
+            $('#address>div').hover(function() {
+                $(this).css('background','#ffa');
+            }, function () {
+                $(this).css('background','#fff')
+            })
+        });
+    </script>
+</head>
+<body>
+    <h1>문서 객체 생성</h1>
+    <div id="festival">
+
+    </div>
+    <div id="address">
+        <h1>주소록 관리</h1>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</body>
+</html>

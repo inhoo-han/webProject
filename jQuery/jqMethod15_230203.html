@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제이쿼리</title>
+    <script src="js/jquery-3.6.3.min.js"></script>
+    <style>
+        
+    </style>
+    <script>
+        $(function() {
+            /* remove() */
+            // $('#box>h1').first().remove();
+            // $('#box>h1').first().click(function() {
+            //     $(this).remove();
+            // });
+            /* empty() */
+            $('#box>h1').empty();
+        });
+    </script>
+</head>
+<body>
+    <div id="box">
+        <h1>나는 곧 제거됨</h1>
+        <h1>제이쿼리 메소드</h1>
+    </div>
+</body>
+</html>
