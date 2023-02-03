@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제이쿼리</title>
+    <script src="js/jquery-3.6.3.min.js"></script>
+    <style>
+        div{
+            width: 600px;
+            height: 700px;
+            border: 1px solid #000;
+            text-align: center;
+            display: inline-block;
+            background-color: #fff;
+        }
+        div img{
+            opacity: 0;
+        }
+        .sw {
+            vertical-align: bottom;
+        }
+    </style>
+    <script>
+        $(function() {
+            let sw = false;
+            $('.sw').click(function() {
+                sw = !sw;
+                if(sw){
+                    $(this).attr('src','images/light-switch1.png');
+                    $('div').css('background-color', "#000");
+                    $('div img').css('opacity',1);
+                    $('div img').css('transition', 'opacity 0.3s ease');
+                } else{
+                    $(this).attr('src','images/light-switch.png');
+                    $('div').css('background-color', "#fff");
+                    $('div img').css('opacity',0);
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div>
+        <img src="images/귀신.jpg" alt="귀신">
+    </div>
+    <img class="sw" src="images/light-switch.png" alt="switch on">
+</body>
+</html>

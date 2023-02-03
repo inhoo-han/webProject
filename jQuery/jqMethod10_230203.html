@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제이쿼리</title>
+    <script src="js/jquery-3.6.3.min.js"></script>
+    <style>
+
+    </style>
+    <script>
+        $(function() {
+            // $('h1').css('background','lightyellow');
+            // $('h1:eq(0)').css('color','red');
+            // $('h1:eq(1)').css('color','green');
+            // $('h1:eq(2)').css('color','blue');
+            let color = ['red', 'green', 'blue'];
+            /* each */
+            // $('h1').each(function(index) {
+            //     $(this).css('color', color[index]).css('background-color', 'yellow');
+            // });
+            /* 선생님 정답 */
+            $('h1').css({
+                color: function(index) {
+                    return color[index];
+                },
+                backgroundColor: 'yellow'
+            });
+
+            /* html() */
+            // $('h1').html('졸리다. . .😪😪😪')
+            $('h1').click(function() {
+                $(this).html($(this).html() + " 메롱..");
+            });
+            $('#box').text("<h1>오늘은 금요일</h1>");
+        });
+    </script>
+</head>
+<body>
+    <h1>제이쿼리 선택자</h1>
+    <h1>제이쿼리 메소드</h1>
+    <h1>제이쿼리 이벤트</h1>
+    <div id="box">
+
+    </div>
+</body>
+</html>

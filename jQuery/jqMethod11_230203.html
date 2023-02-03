@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제이쿼리</title>
+    <script src="js/jquery-3.6.3.min.js"></script>
+    <style>
+
+    </style>
+    <script>
+        $(function() {
+            let text = ["오늘은 영하 4도로 어제에 비해 따뜻하겠습니다.", "오늘은 행복한 금요일입니다.", "오늘은 자바스크립트의 라이브러리인 제이쿼리를 배우고 있습니다."];
+            //나는 each쓰는데 index쓰는 것도 항상 생각해야한다.
+            /* each */
+            $('h1').each(function(index){
+                $(this).click(function(){
+                    $(this).text(text[index]);
+                });
+            });
+            /* index */
+            let index;
+            $('h1').click(function() {
+                index = $(this).index();
+                $(this).html(text[index]);
+            })
+            /* 두 번째 문제 */
+            let divText = ['제이쿼리 선택자', '제이쿼리 메소드', '제이쿼리 이벤트'];
+            $('div').html(function(index) {
+                return "<h1>"+divText[index]+"</h1>";
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>오늘의 날씨는?</h1>
+    <h1>오늘은 무슨 요일?</h1>
+    <h1>오늘 배우는 내용은?</h1>
+    <div></div>
+    <div></div>
+    <div></div>
+</body>
+</html>
