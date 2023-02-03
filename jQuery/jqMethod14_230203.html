@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제이쿼리</title>
+    <script src="js/jquery-3.6.3.min.js"></script>
+    <style>
+        #carChange{
+            width: 300px;
+            text-align: center;
+        }
+        #carChange>img{
+            width: 60px;
+            height: 36px;
+            margin: 2px;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        $(function() {
+            $('#carChange>img').click(function() {
+                $('.myCar').attr('src', $(this).attr('src'));
+            });
+        });
+    </script>
+</head>
+<body>
+    <img src="images/car1.jpg" alt="car1" class="myCar">
+    <div id="carChange">
+        <img src="images/car1.jpg" alt="car1">
+        <img src="images/car2.jpg" alt="car2">
+        <img src="images/car3.jpg" alt="car3">
+        <img src="images/car4.jpg" alt="car4">
+    </div>
+</body>
+</html>
