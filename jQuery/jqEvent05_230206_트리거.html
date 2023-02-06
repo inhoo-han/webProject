@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>jQueryEvent</title>
+<script src="js/jquery-3.6.3.min.js"></script>
+<style>
+    
+</style>
+<script>
+$(function() {
+    $('h1').on('click', function() {
+        $(this).html(function(index, html){
+            return html + "💙";
+        });
+    });
+    let si = setInterval(() => {
+        $('h1').last().trigger('click');
+    }, 150);
+    $('button').on('click', function () {
+        clearInterval(si);
+    });
+});
+</script>
+</head>
+<body>
+    <button>중지</button>
+    <h1>홍길동-</h1>
+    <h1>김철수-</h1>
+</body>
+</html>

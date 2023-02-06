@@ -11,6 +11,14 @@
         border: 3px solid;
         margin-top: 10px;
     }
+    .clear{
+        position: relative;
+        top: 3px;
+        display: inline-block;
+        border: 3px dashed #777;
+        width: 15px;
+        height: 15px;
+    }
 </style>
 <script>
 $(function() {
@@ -19,11 +27,46 @@ $(function() {
     let can = document.getElementById('canvas');
     let context = can.getContext('2d');
     let sw = false;
-    let lineWidth = 1;
-
+    
+    /* 두께 변경 */
+    let lineWidth = 10;
     $('select').change(function() {
         lineWidth = $('select>option:selected').val();
     });
+
+    /* 색깔 변경 */
+    let color = '#000';
+    $('.colorChange').change(function() {
+        color = $(this).val();
+        // alert(color);
+    });
+
+    /* 도화지 초기화 */
+    $('button').click(function() {
+        can.width = can.width;
+    }); 
+
+    /* 지우개 */
+    let oldColor, oldLineWidth;
+    let clearSW = false;
+    $('.clear').click(function() {
+        clearSW = !clearSW;
+        if(clearSW){
+            $(this).css('border' ,'3px solid black');
+            $(can).css('cursor', 'grabbing');
+            oldColor = color;
+            oldLineWidth = lineWidth;
+            color = '#fff';
+            lineWidth = 20;
+        } else{
+            $(this).css('border','3px dashed #777');
+            $(can).css('cursor','default');
+            color = oldColor;
+            lineWidth = oldLineWidth;
+        }
+    });
+
+
     $(can).on({
         mousedown: function(event) {
             // console.log('캔버스 위에서 마우스 눌렀습니다.')
@@ -33,7 +76,6 @@ $(function() {
             x = event.pageX - position.left;
             y = event.pageY - position.top;  
             //.beginPath() : 좌표 시작
-            context.lineWidth = lineWidth;
             context.beginPath();        
             context.moveTo(x,y);
         },
@@ -44,6 +86,8 @@ $(function() {
                 position = $(this).offset();
                 x = event.pageX - position.left;
                 y = event.pageY - position.top;  
+                context.lineWidth = lineWidth;
+                context.strokeStyle = color;
                 context.lineTo(x,y);        //마우스 움직이는 것 따라서 위치가 이동됨
                 context.stroke();           //스트로크 방식처럼 라인을 그려줌.
             }
@@ -69,12 +113,15 @@ $(function() {
         <option>7</option>
         <option>8</option>
         <option>9</option>
-        <option>10</option>
+        <option selected>10</option>
         <option>11</option>
         <option>12</option>
     </select>
     <span>붓의 색상</span>
     <input type="color" class="colorChange">
+    <span>지우개</span>
+    <div class="clear"></div><br>
+    <button>새 도화지</button>
     <canvas id="canvas" width="800" height="500"></canvas>
 </body>
 </html>
