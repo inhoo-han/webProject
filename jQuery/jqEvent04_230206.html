@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>jQueryEvent</title>
+<script src="js/jquery-3.6.3.min.js"></script>
+<style>
+    #canvas{
+        border: 3px solid;
+        margin-top: 10px;
+    }
+</style>
+<script>
+$(function() {
+    /* 변수 */
+    let position, x, y;
+    let can = document.getElementById('canvas');
+    let context = can.getContext('2d');
+    let sw = false;
+    let lineWidth = 1;
+
+    $('select').change(function() {
+        lineWidth = $('select>option:selected').val();
+    });
+    $(can).on({
+        mousedown: function(event) {
+            // console.log('캔버스 위에서 마우스 눌렀습니다.')
+            sw = true;
+            position = $(this).offset();
+            //x = 내가 누른 위치의 브라우저상 x값 - 캔버스가 브라우저에서 갖고 있는 x값 = 누른 값이 캔버스에서 차지하는 값.
+            x = event.pageX - position.left;
+            y = event.pageY - position.top;  
+            //.beginPath() : 좌표 시작
+            context.lineWidth = lineWidth;
+            context.beginPath();        
+            context.moveTo(x,y);
+        },
+        mousemove: function(event) {
+            // console.log('캔버스 위에서 돌아다니고 있습니다.')
+            if(sw){
+                // 마우스를 움직이면서 바뀌는 좌표를 다시 구함
+                position = $(this).offset();
+                x = event.pageX - position.left;
+                y = event.pageY - position.top;  
+                context.lineTo(x,y);        //마우스 움직이는 것 따라서 위치가 이동됨
+                context.stroke();           //스트로크 방식처럼 라인을 그려줌.
+            }
+        },
+        mouseup: function(event) {
+            // console.log('캔버스 위에서 마우스 뗐습니다.')
+            sw = false;
+        }
+    });
+});
+</script>
+</head>
+<body>
+    <p>📃낙서장📒</p>
+    <span>붓의 두께</span>
+    <select>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+        <option>9</option>
+        <option>10</option>
+        <option>11</option>
+        <option>12</option>
+    </select>
+    <span>붓의 색상</span>
+    <input type="color" class="colorChange">
+    <canvas id="canvas" width="800" height="500"></canvas>
+</body>
+</html>

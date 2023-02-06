@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>jQueryEvent</title>
+<script src="js/jquery-3.6.3.min.js"></script>
+<style>
+
+</style>
+<script>
+$(function() {
+    let num = [3, 5, 2];
+    let name = ['냉장고', '청소기', '에어컨'];
+    let index;
+    $('h1').css('cursor', 'pointer').on('click', function() {
+        index = $(this).index();
+        num[index] -= 1;            // num[index]--; 라고 쓸 수도 있다! 
+        alert(name[index] + '를 구입해 주셔서 감사합니다.');
+        if(num[index] == 0){
+            alert('완판되었습니다.');
+            $(this).html(name[index] + ' 완판!!');
+            $(this).css({
+                color: '#777',
+                cursor: 'default'
+            });
+            $(this).off();
+        } else {
+            alert('서둘러 주세요. 이제 남은 수량은 ' + num[index] + '대입니다.');
+        }
+    });
+});
+</script>
+</head>
+<body>
+    <h1>냉장고 판매 중</h1>
+    <h1>청소기 판매 중</h1>
+    <h1>에어컨 판매 중</h1>
+</body>
+</html>

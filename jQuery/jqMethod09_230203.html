@@ -13,8 +13,12 @@
         $(function() {
             $('img').click(function(event) {
                 if(event.shiftKey) {
-                    $(this).css('width', '200px');
-                    $(this).css('transition', 'all 1s');
+                    // $(this).css('width', '200px');
+                    // $(this).css('transition', 'all 1s');
+                    $(this).css({
+                        width: 200,
+                        transition: 'all 1s'
+                    });
                 } else{
                     // $(this).removeAttr('width');
                     $(this).css('width', '1024px');

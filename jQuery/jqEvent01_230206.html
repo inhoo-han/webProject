@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>jQueryEvent</title>
+<script src="js/jquery-3.6.3.min.js"></script>
+<style>
+    .reverse{
+        background-color: #000;
+        color: #fff;
+    }
+</style>
+<script>
+$(function() {
+    // /* [1] : on*/
+    // $('h1').on('click', function() {
+    //     // $(this).html('나를 클릭하였느냐');
+    //     $(this).html(function(index, html){
+    //         return html + '😁';
+    //     });
+    // });
+    // /* [2] : [1]과 동일 */
+    // $('h1').click(function() {
+    //     $(this).html(function(index, html){
+    //         return html + '😁';
+    //     });
+    // });
+    // /* [3] */
+    // $('h1').hover(function() {
+    //     $(this).addClass('reverse');
+    // }, function() {
+    //     $(this).removeClass('reverse');
+    // });
+    /* [4] [3]과 동일 */
+    $('h1').on({
+        mouseenter: function() {
+            //reverse라는 클래스 추가
+            $(this).addClass('reverse');
+        },
+        mouseleave: function() {
+            $(this).removeClass('reverse');
+        },
+        /* [1]번 추가*/
+        click: function() {
+            $(this).html(function(index, html){
+                return html + '😏';
+            })
+        }
+    });
+});
+</script>
+</head>
+<body>
+    <h1>첫 번째 이벤트 시작 - </h1>
+    <h1>두 번째 이벤트 시작 - </h1>
+    <h1>세 번째 이벤트 시작 - </h1>
+</body>
+</html>

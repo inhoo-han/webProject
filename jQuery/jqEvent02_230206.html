@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>jQueryEvent</title>
+<script src="js/jquery-3.6.3.min.js"></script>
+<style>
+
+</style>
+<script>
+$(function() {
+    /* one */
+    $('h1').one('click', function() {
+        alert('잠 깼다😛');
+    });
+    
+    /* threeTimes */
+    let count = 0;
+    $('h1').on('click', function() {
+        if(count == 3){
+            alert('기절😔😔😔(세 번 완료)');
+            $(this).off();
+        } else{
+            alert('잠 깼다😛');
+        }
+        // $(this).off();
+        count++;
+    });
+});
+</script>
+</head>
+<body>
+    <h1>아 졸리당😪😴😪</h1>
+</body>
+</html>
