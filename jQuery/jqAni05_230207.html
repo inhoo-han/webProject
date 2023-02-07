@@ -7,27 +7,27 @@
 <title>jQueryEvent</title>
 <script src="js/jquery-3.6.3.min.js"></script>
 <style>
-    .images{
-        /* display: none; */
+    #person{
+        position: relative;
     }
-    .images img{
+    #person>img{
+        position: absolute;
         width: 500px;
     }
 </style>
 <script>
 $(function() {
-    $('button').click(function() {
-        $('.images').hide(2000, function(){
-            alert('이제 모든 펭귄들이 잘 시간');
-        });
+    $('#person>img').eq(2).fadeOut(10000, function() {
+        $('#person>img').eq(1).fadeOut(10000);
     });
 });
 </script>
 </head>
 <body>
-    <button>이미지감추기</button>
-    <div class="images">
-        <img src="images/Penguins.jpg" alt="Penguins">
+    <div id="person">
+        <img src="images/송해.jpg" alt="송해">
+        <img src="images/호동.jpg" alt="호동">
+        <img src="images/형돈.jpg" alt="형돈">
     </div>
 </body>
 </html>

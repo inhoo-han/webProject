@@ -14,13 +14,18 @@
 <script>
 $(function() {
     $('button').click(function() {
-        $('.news').toggle(2000);
+        // $('.news').slideDown('slow');
+        // $('.news').slideUp(2000, function() {
+        //     // $('body').append('<h2>다음 뉴스는 9시에. . .</h2>')
+        //     $('.news').after('<h2>다음 뉴스는 9시에. . .</h2>')
+        // });
+        $('.news').slideToggle(2000);
     });
 });
 </script>
 </head>
 <body>
-    <button>토글</button>
+    <button>뉴스토글</button>
     <div class="news">
         <h2>맛있게 밥 먹은 나</h2>
         <p>오늘 밥은 햇반컵반 김치날치알덮밥이었다. 덮밥인가 볶음밥인가 암튼 지금까지 먹은 컵반중에 가장 맛있었다고 해도 과언이 아니다. 재구매 의사 있다.</p>

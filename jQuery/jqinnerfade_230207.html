@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>jQueryEvent</title>
+<script src="js/jquery-3.6.3.min.js"></script>
+<script src="js/jquery.innerfade.js"></script>
+<style>
+    #inner_fade>img{
+        width: 500px;
+        height: 350px;
+    }
+</style>
+<script>
+$(function() {
+    $('#inner_fade').innerfade({
+        animationtype: 'slide'
+    });
+    
+});
+</script>
+</head>
+<body>
+    <div id="inner_fade">
+        <img src="images/Chrysanthemum.jpg" alt="Chrysanthemum">
+        <img src="images/Desert.jpg" alt="Desert">
+        <img src="images/Hydrangeas.jpg" alt="Hydrangeas">
+        <img src="images/Jellyfish.jpg" alt="Jellyfish">
+        <img src="images/Koala.jpg" alt="Koala">
+        <img src="images/Lighthouse.jpg" alt="Lighthouse">
+        <img src="images/Penguins.jpg" alt="Penguins">
+    </div>
+</body>
+</html>
