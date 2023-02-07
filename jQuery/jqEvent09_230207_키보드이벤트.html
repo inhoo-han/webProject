@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>jQueryEvent</title>
+<script src="js/jquery-3.6.3.min.js"></script>
+<style>
+    div{
+        width: 160px;
+    }
+    h1{
+        width: 300px;
+    }
+    textarea{
+        resize: none;           /* textarea 사이즈 변경 못하게! */
+    }
+    p{
+        text-align: right;
+    }
+</style>
+<script>
+$(function() {
+    $('textarea').keyup(function() {
+        let inputLength = $(this).val().length;        //textarea안에 입력될 값을 가져오겠다.
+        let remain = 80-inputLength;
+        if(remain < 0){
+            $('h2').html("MMS").css('color', 'red');
+        } else{
+            $('h2').html(remain).css('color','black');
+        }
+        $('p').html(inputLength + '/200');
+    });
+});
+</script>
+</head>
+<body>
+    <div>
+        <h1>💌문자보내기</h1>
+        <h2>80</h2>
+        <!-- 텍스트를 여러줄 받을 수 있음. -->
+        <textarea cols="30" rows="10" maxlength="200"></textarea>     
+        <p>0/200</p> 
+    </div>
+</body>
+</html>

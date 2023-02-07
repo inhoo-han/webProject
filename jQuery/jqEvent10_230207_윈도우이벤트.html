@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>jQueryEvent</title>
+<script src="js/jquery-3.6.3.min.js"></script>
+<style>
+    
+</style>
+<script>
+$(function() {
+    /* resize */
+    // $(window).resize(function() {
+    //     alert('창의 크기를 변경했니?');
+    // });
+
+    /* scroll */
+    //무한스크롤 
+    for(let i = 0; i < 25; i++){
+        $('<h1>무한 스크롤 체험</h1>').appendTo('body');
+    }
+    $(window).scroll(function() {
+        // console.log($(window).scrollTop());  //스크롤 얼마나 내려왔나?
+        // console.log($(window).height());     //창의 높이는 얼마나 될까?
+        let scrollHeight = $(window).scrollTop() + $(window).height();
+        let documentHeight = $(document).height();
+        // console.log(documentHeight);            //내가 만든 문서의 높이는 얼마나 될까?
+        if(scrollHeight >= documentHeight-200/*끝까지 다 왔을 때 로딩하면 느리니까 그 전에 미리 로딩준비*/) {
+            for(let i = 0; i < 25; i++){
+                $('<h1>무한 스크롤 체험</h1>').appendTo('body');
+            }       
+        }
+    });
+});
+</script>
+</head>
+<body>
+    <h1>윈도우 이벤트</h1>
+</body>
+</html>

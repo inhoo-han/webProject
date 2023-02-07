@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>jQueryEvent</title>
+<script src="js/jquery-3.6.3.min.js"></script>
+<style>
+    .images{
+        display: none;
+    }
+    .images img{
+        width: 500px;
+    }
+</style>
+<script>
+$(function() {
+    $('button').click(function() {
+        $('.images').show(2000, function(){
+            alert('이상, 펭귄뉴스였습니다.');
+        });
+    });
+});
+</script>
+</head>
+<body>
+    <button>이미지보기</button>
+    <div class="images">
+        <img src="images/Penguins.jpg" alt="Penguins">
+    </div>
+</body>
+</html>
