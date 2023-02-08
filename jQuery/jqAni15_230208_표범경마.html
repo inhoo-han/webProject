@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>jQueryEvent</title>
+<script src="js/jquery-3.6.3.min.js"></script>
+<style>
+    img{
+        position: relative;
+        width: 100px;
+        margin-bottom: 30px;
+    }
+    .line{
+        position: absolute;
+        top: 30px;
+        left: 1100px;
+        width: 2px;
+        height: 400px;
+        background-color: orangered;
+    }
+</style>
+<script>
+$(function() {
+    let setVal;
+    //출발 버튼 클릭
+    $('#start').click(function() {
+        setVal = setInterval(function() {
+            for(let i = 0; i < 5; i++){
+                let distance = Math.floor(Math.random()*30)+1;
+                if(i == 1){                                 // 조작부분!
+                    if(distance < 10){
+                        distance += 3;
+                    }
+                }
+                $('img').eq(i).animate({
+                    left: '+=' + distance
+                },500);
+                let goalLine = $('img').eq(i).css('left');
+                if(parseInt(goalLine) >= 1000){
+                    clearInterval(setVal);
+                    alert((i+1)+'번 표범 우승');
+                    $('.topName').html("▶ " + (i+1) + "번 표범 우승 ◀");
+                }
+            }
+        }, 500);
+    });
+    //제 자리로 버튼 클릭
+    $('#set').click(function() {
+        $('img').css('left', 0);
+        $('.topName').html("");
+    });
+});
+</script>
+</head>
+<body>
+    <p>
+        <button id="start">출발</button> 🥇🥈🥉 <button id="set">제 자리로</button>
+        <span class="topName"></span>
+    </p>
+    <img src="images/표범.gif" alt="표범" title="1번 선수"><br>
+    <img src="images/표범.gif" alt="표범" title="2번 선수"><br>
+    <img src="images/표범.gif" alt="표범" title="3번 선수"><br>
+    <img src="images/표범.gif" alt="표범" title="4번 선수"><br>
+    <img src="images/표범.gif" alt="표범" title="5번 선수"><br>
+    <div class="line"></div>
+</body>
+</html>
