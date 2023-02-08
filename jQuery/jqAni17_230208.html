@@ -6,16 +6,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>jQueryEvent</title>
 <script src="js/jquery-3.6.3.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
 <style>
 
 </style>
 <script>
 $(function() {
-
+    $('img').draggable({
+        revert: 'invalid'
+    });
+    $('h1').draggable();
 });
 </script>
 </head>
 <body>
     <img src="images/car_red.jpg" alt="car_red">
+    <img src="images/car_green.jpg" alt="car_red">
+    <img src="images/car_purple.jpg" alt="car_red">
+    <h1>나도 움직여봐라😝</h1>
 </body>
 </html>
