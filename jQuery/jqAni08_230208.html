@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>jQueryEvent</title>
+<script src="js/jquery-3.6.3.min.js"></script>
+<style>
+    img{
+        width: 55px;
+        height: 40px;
+        opacity: 0.1;
+        cursor: pointer;
+    }
+</style>
+<script>
+$(function() {
+    $('img').on('mouseenter', function() {
+        $(this).animate({
+            width: 550,
+            height: 400,
+            opacity: 1
+        },'normal', function() {
+            $(this).delay(1000).animate({
+                width: 55,
+                height: 40,
+                opacity: 0.1
+            }, 'fast');
+        });
+    });
+});
+</script>
+</head>
+<body>
+    <img src="images/ghost.jpg" alt="ghost">
+</body>
+</html>

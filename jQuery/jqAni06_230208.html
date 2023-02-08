@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>jQueryEvent</title>
+<script src="js/jquery-3.6.3.min.js"></script>
+<style>
+    img, h2{
+        position: relative;
+    }
+</style>
+<script>
+$(function() {
+    $('img').click(function() {
+        $(this).animate({
+            left: 1500
+        },5000);
+    });
+    $('h2').click(function() {
+        $(this).animate({
+            left: 1500
+        }, 5000, function() {
+            $(this).html('공부하러 갑니더😁');
+        });
+    });
+});
+</script>
+</head>
+<body>
+    <img src="images/car_green.jpg" alt="car_green"><br>
+    <img src="images/car_red.jpg" alt="car_red"><br>
+    <img src="images/car_purple.jpg" alt="car_purple"><br>
+    <h2>나는 무엇을 하러 갈까유????</h2>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>jQueryEvent</title>
+<script src="js/jquery-3.6.3.min.js"></script>
+<style>
+    img{
+        position: relative;
+        width: 74px;
+        height: 42px;
+        cursor: pointer;
+        top: 10px;
+    }
+</style>
+<script>
+$(function() {
+    let index;
+    setInterval(function() {
+        $('img').animate({
+            left: 1000
+        }, 2000).animate({
+            left: 0
+        },2000);
+    }, 4000);
+    $('button').click(function() {
+        index = $(this).index();
+        switch (index) {
+            case 0:
+                $('img').stop();
+                break;
+            case 1:
+                $('img').stop(true);
+                break;
+            case 2:
+                $('img').stop(false, true);
+                break;
+            case 3:
+                $('img').stop(true, true);
+                break;
+        }
+    });
+});
+</script>
+</head>
+<body>
+    <button>중지!</button>
+    <button>중지!(Queue 비우기)</button>
+    <button>중지!(Queue놔두고 결과보여줘)</button>
+    <button>중지!(Queue비우고 결과보여줘)</button>
+    <br>
+    <img src="images/car_green.jpg" alt="car_green">
+</body>
+</html>
