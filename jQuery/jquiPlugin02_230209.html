@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>jQueryEvent</title>
+<script src="js/jquery-3.6.3.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<style>
+    img{
+        position: relative;
+    }
+    div{
+        position: relative;
+        width: 100px;
+        height: 100px;
+        background-color: orange;
+        border-radius: 50%;
+        z-index: 100;
+    }
+</style>
+<script>
+$(function() {
+    let easing;
+    $('select').change(function() {
+        easing = $('select>option:selected').html();
+    });
+    $('img').click(function() {
+        $(this).animate({
+            left: 1500
+        }, 3000, easing). delay(1000). animate({
+            left: 0
+        }, 3000, easing);
+    });
+    $('div').click(function() {
+        $(this).animate({
+            top: 1000
+        }, 1000, easing). animate({
+            top: 0
+        }, 1000, easing);
+    });
+
+});
+</script>
+</head>
+<body>
+    <select>
+        <option>linear</option>
+        <option>swing</option>
+        <option>easeInQuad</option>
+        <option>easeOutQuad</option>
+        <option>easeInOutQuad</option>
+        <option>easeInCubic</option>
+        <option>easeOutCubic</option>
+        <option>easeInOutCubic</option>
+        <option>easeInQuart</option>
+        <option>easeOutQuart</option>
+        <option>easeInOutQuart</option>
+        <option>easeInQuint</option>
+        <option>easeOutQuint</option>
+        <option>easeInOutQuint</option>
+        <option>easeInSine</option>
+        <option>easeOutSine</option>
+        <option>easeInOutSine</option>
+        <option>easeInExpo</option>
+        <option>easeOutExpo</option>
+        <option>easeInOutExpo</option>
+        <option>easeInCirc</option>
+        <option>easeOutCirc</option>
+        <option>easeInOutCirc</option>
+        <option>easeInElastic</option>
+        <option>easeOutElastic</option>
+        <option>easeInOutElastic</option>
+        <option>easeInBack</option>
+        <option>easeOutBack</option>
+        <option>easeInOutBack</option>
+        <option>easeInBounce</option>
+        <option>easeOutBounce</option>
+        <option>easeInOutBounce</option>
+    </select>
+    <div></div>
+    <img src="images/car_red.jpg" alt="car_red">
+</body>
+</html>

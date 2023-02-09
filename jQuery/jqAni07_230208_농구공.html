@@ -6,6 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>jQueryEvent</title>
 <script src="js/jquery-3.6.3.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
 <style>
     .box{
         position: relative;
@@ -51,16 +52,23 @@
 </style>
 <script>
 $(function() {
-    $('.box').hover(function() {
+    // $('.box').hover(function() {
+    //     $(this).animate({
+    //         left: 800,
+    //         opacity: 0
+    //     },2000);
+    // }, function() {
+    //     $(this).animate({
+    //         left: 0,
+    //         opacity: 1
+    //     },2000);
+    // });
+
+    /* 230209에서 왔음. easing주러 */
+    $('.box').click(function() {
         $(this).animate({
-            left: 800,
-            opacity: 0
-        },2000);
-    }, function() {
-        $(this).animate({
-            left: 0,
-            opacity: 1
-        },2000);
+            top: 500
+        }, 1000, 'easeOutBounce'). animate({}, 1000);
     });
 });
 </script>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>jQueryEvent</title>
+<script src="js/jquery-3.6.3.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<style>
+    div{
+        margin: 0;
+        padding: 0;
+    }
+    .reverse{
+        color: #fff;
+        background-color: #000;
+        border: 1px solid red;
+        box-sizing: border-box;
+    }
+</style>
+<script>
+$(function() {
+    $('div').hover(function() {
+        $(this).addClass('reverse', 1000);
+    }, function() {
+        $(this).removeClass('reverse',1000);
+    });
+});
+</script>
+</head>
+<body>
+    <div>
+        <h1>JavaScript</h1>
+        <p>정적인 홈페이지를 동적으로 만들어주는 웹 언어</p>
+    </div>
+    <div>
+        <h1>jQuery</h1>
+        <p>자바스크립트로 만들어진 라이브러리</p>
+    </div>
+    <div>
+        <h1>jQuery Plug-in</h1>
+        <p>다양한 기능을 구현해 놓은 라이브러리</p>
+    </div>
+</body>
+</html>
