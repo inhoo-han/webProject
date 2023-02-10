@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>jQueryEvent</title>
+<link rel="stylesheet" href="css/jquery-ui.min.css">
+<script src="js/jquery-3.6.3.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<style>
+    .item{
+        margin: 3px;
+        padding: 5px;
+    }
+    .item img{
+        width: 100px;
+        height: 100px;
+    }
+    #wrap{
+        overflow: hidden;   /*float해서 이 속성 없으면 한 명 나갔을 때 나머지도 다 딸려 올라옴.*/
+        /* border: 1px solid navy; */
+    }
+    #wrap>div{
+        float: left;
+    }
+    #dock{
+        position: fixed;
+        min-height: 150px;
+        width: 100%;
+        bottom: 0;
+        z-index: 1;
+    }
+    #dock>div{
+        /* 물건을 창고에 넣으면 넣은 순서대로 오른쪽에 붙는다. */
+        float: right;
+    }
+    #dock p{
+        color: rgba(200, 200, 200, 0.5);
+    }
+</style>
+<script>
+$(function() {
+    for(let i = 0; i < 21; i++){
+        let icon = '';
+        icon += '<div class="ui-widget-content ui-corner-all item">';
+        icon += '<img src="images/' + i + '.png">';
+        icon += '</div>';
+        $('#wrap').append(icon);
+    }
+    $('#wrap>div').draggable({
+        zIndex: 100,
+        scroll: false,
+        helper: 'clone',             /* 실제가 움직이는 것이 아니라 복제되어 움직일 것 */
+        revert: 'invalid'
+    });
+    $('#dock').droppable({
+        accept: '#wrap>div',
+        drop: function(event, ui) {
+            $(ui.draggable).fadeOut('fast', function() {
+                $(this).appendTo('#dock').fadeIn('fast');
+            })
+        }
+    });
+
+    /* dock에 있는 물건 밖으로 빠져나오게 */
+    // $('#dock>div').draggable({
+    //     helper: 'clone'
+    // });
+    $('#wrap').droppable({
+        accept: '#dock>div',
+        drop: function(event, ui) {
+            $(ui.draggable).fadeOut('fast', function() {
+                $(this).appendTo('#wrap').fadeIn('fast');
+            })
+        }
+    });
+});
+</script>
+</head>
+<body>
+    <!-- 밖에 나와있는 물건 -->
+    <div id="wrap">
+
+    </div>
+    <!-- 창고 -->
+    <div id="dock" class="ui-state-error">
+        <p>창고</p>
+    </div>
+</body>
+</html>

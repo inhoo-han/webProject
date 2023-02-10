@@ -6,7 +6,34 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>cssTest</title>
 <style>
-
+    body{
+        padding: 30px;
+    }
+    .chooseLabel input[type="radio"]{
+        /* 안 보이게 해도 체크는 된다 */
+        display: none;
+    }
+    .chooseLabel input[type="radio"] + span {
+        position: relative;
+        display: inline-block;
+        width: 100px;
+        height: 70px;
+        font-size: 1.3em;
+        text-align: center;
+        line-height/*줄간격*/: 70px;
+        cursor: pointer;
+        padding: 0 10px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        background: none;
+        box-shadow: 2px 2px 1px #555;
+    }
+    .chooseLabel input[type="radio"]:checked + span{
+        left: 3px;
+        top: 3px;
+        /* background-color: #ccc; */
+        box-shadow: -1px -1px 1px #555;
+    }
 </style>
 </head>
 <body>

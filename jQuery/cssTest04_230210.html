@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>cssTest</title>
+<style>
+    #chkimg, #chkimg2{
+        display: none;
+    }
+    #chkimg + label span, #chkimg2 + label span{
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        background: url(images/c.svg) no-repeat;
+        vertical-align: middle;
+    }
+    #chkimg:checked + label span, #chkimg2:checked + label span {
+        background: url(images/c2.svg) no-repeat;
+    }
+</style>
+</head>
+<body>
+    <div>
+        <input type="checkbox" id="chkimg">
+        <label for="chkimg">
+            <span></span>쿠쿠밥솥<br>
+        </label>
+    </div>
+    <div>
+        <input type="checkbox" id="chkimg2">
+        <label for="chkimg2">
+            <span></span>쿠첸밥솥<br>
+        </label>
+    </div>
+</body>
+</html>
