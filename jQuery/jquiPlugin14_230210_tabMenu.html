@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>jQueryEvent</title>
+<link rel="stylesheet" href="css/jquery-ui.min.css">
+<script src="js/jquery-3.6.3.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<style>
+    #tabs{
+        width: 500px;
+    }
+</style>
+<script>
+$(function() {
+    $('#tabs').tabs({
+        event: 'mouseover'
+    });
+});
+</script>
+</head>
+<body>
+    <div id="tabs">
+        <ul>
+            <li><a href="#news-1">Economy News</a></li>
+            <li><a href="#news-2">Social News</a></li>
+            <li><a href="#news-3">Science News</a></li>
+        </ul>
+        <div id="news-1">
+            <p>추 부총리는 이어 "작년 물가 상승 폭이 굉장히 컸기 때문에 우리도 일정 부분 금리를 가파르게 올렸다"면서 
+                "올해는 물가를 안정시키고 극심한 경기 둔화를 방지하기 위해 물가와 경기를 함께 신경 써야 한다"고 말했다.</p>
+            <p>엎친 데 덮친 격이다. 하루에 여러 악재가 동시에 쏟아져 나오며 카카오 시가총액은 순식간에 1조원이 증발했다.</p>
+        </div>
+        <div id="news-2">
+            <p>서울교통공사가 지난해 한 해 동안 공사에 접수된 유실물이 총 12만7387건으로, 2021년 유실물 10만1618건 대비 125% 수준으로 대폭 증가했다고 10일 밝혔다. 방역 수칙이 완화되면서 지하철 이용승객이 회복세를 보이고, 각종 행사와 저녁 모임이 늘어나면서 유실물도 늘어난 것으로 보인다.</p>
+        </div>
+        <div id="news-3">
+            <p>정부가 상반기 누리호 3차 발사를 추진하고 연내 우주항공청을 개청하는 등 올해 우주를 향한 강력한 도전 의지를 드러냈다.</p>
+        </div>
+    </div>
+</body>
+</html>
