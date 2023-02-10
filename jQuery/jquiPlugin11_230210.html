@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>jQueryEvent</title>
+<link rel="stylesheet" href="css/jquery-ui.min.css">
+<script src="js/jquery-3.6.3.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<style>
+    .box{
+        padding: 5px;
+    }
+    .box>p{
+        padding: 5px;
+        text-align: center;
+    }
+    #output{
+        margin-top: 10px;
+    }
+</style>
+<script>
+$(function() {
+    $('#buttonRadio').hover(function() {
+        $(this).addClass('ui-state-hover');
+    }, function() {
+        $(this).removeClass('ui-state-hover');
+    });
+    $('#buttonRadio').click(function() {
+        $(this).toggleClass('ui-state-active');
+    });
+    $('#radioBox').buttonset();
+    $('#radioBox>input').change(function() {
+        $('#output').addClass('ui-state-' + $(this).val()/*radio의 value를 가져올 수 있다.*/);
+    });
+    $('button').click(function() {
+        reset();
+    });
+    /* 내부에 만든 사용자 정의 함수 */
+    function reset() {
+        $('#output').attr('class','ui-widget-content ui-corner-all'); /* 가장 기본상태로 돌아간다 */
+    };
+});
+</script>
+</head>
+<body>
+    <div id="buttonRadio" class="box ui-state-default ui-corner-all">
+        <p>겨울철 건강관리 철저히 합시다.</p>
+    </div>
+    <div id="radioBox">
+        <input type="radio" id="highlight" name="theme" value="highlight">
+        <label for="highlight">highlight</label>
+        <input type="radio" id="error" name="theme" value="error">
+        <label for="error">error</label>
+        <input type="radio" id="error-text" name="theme" value="error-text">
+        <label for="error-text">error-text</label>
+        <input type="radio" id="disabled" name="theme" value="disabled">
+        <label for="disabled">disabled</label>
+        <button>RESET</button><br>
+        <div id="output" class="ui-widget-content ui-corner-all">
+            <p>오늘은 청광차단안경을 가져오지 않았다. 괜스리 눈이 더 피곤한 느낌이 난다.</p>
+            <p>아침을 먹고왔더니 1교시부터 배가고프다. 아침을 안 먹으면 2교시까진 버틸 수 있는데; 당황스럽구나.
+                q배고파 배고파ㅏㅏㅏㅏㅏ 배고파배가고프다 배고파ㅏㅏㅏㅏㅏ
+                나는 아직 배가 고프다
+            </p>
+        </div>
+        
+    </div>
+</body>
+</html>

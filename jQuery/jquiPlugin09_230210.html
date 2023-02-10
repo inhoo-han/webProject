@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>jQueryEvent</title>
+<link rel="stylesheet" href="css/jquery-ui.min.css">
+<script src="js/jquery-3.6.3.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<style>
+    #news h3{
+        background: salmon;
+    }
+</style>
+<script>
+$(function() {
+    let icons = {
+        header: 'ui-icon-circle-arrow-e',
+        activeHeader: 'ui-icon-circle-arrow-s'      /*click*/
+    };
+    $('#news').accordion({
+        heightStyle: 'content',
+        icons: icons
+    });
+});
+</script>
+</head>
+<body>
+    <div id="news">
+        <h3>오늘의 날씨</h3>
+        <p>오늘은 어제보다 따뜻하고 비가 오는 곳이 있겠습니다. 서울 최저기온은 영상 2도, 최고기온은 영상 10도입니다.</p>
+        <h3>Lorem ipsum</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi odit atque a, nihil saepe similique dignissimos sed itaque veniam adipisci dolor fugiat cupiditate vitae consectetur exercitationem natus sit. A, earum!</p>
+        <h3>제이쿼리 UI 플러그인 수업</h3>
+        <p>쌤은 로렘입숨 쓰셨는데 나는 저 위에다가 써서 또 쓰기가 좀 글쿠망. 걍 입력하는걸로 하자. 3-3</p>
+    </div>
+</body>
+</html>

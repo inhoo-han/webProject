@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>cssTest</title>
+<style>
+    input[type=checkbox]:checked + div {
+        height: 0;
+    }
+    div{
+        width: 400px;
+        height: 300px;
+        border: 1px solid #ccc;
+        background-color: antiquewhite;
+        overflow: hidden;
+        transition: all 3s;
+    }
+</style>
+</head>
+<body>
+    <input type="checkbox">뉴스감추기
+    <div>
+        <h2>오늘의 뉴스</h2>
+        <p>아주 처음보는 css선택자. css의 세계는 끝이 없다. Never Ending.</p>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus deserunt ipsam ullam, illum delectus obcaecati accusamus voluptate laudantium quibusdam necessitatibus, libero unde recusandae maxime beatae quidem enim? Ut, animi rerum.</p>
+    </div>
+</body>
+</html>
