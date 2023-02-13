@@ -7,7 +7,42 @@
 <script src="http://code.jquery.com/jquery-1.7.min.js"></script>
 <script>
 	$(document).ready(function() {
-		
+		/* 나의 답*/
+		// $('#home').toggle(function() {
+		// 	$('#menu').css('left',50).css('transition','1s');
+		// }, function() {
+		// 	$('#menu').css('left', -600);
+		// });
+		// $('li').hover(function() {
+		// 	$(this).css('opacity',1);
+		// }, function() {
+		// 	$(this).css('opacity',0.2)
+		// });
+
+
+		/* 쌤 정답 */
+		let sw = false;
+		$('#home').click(function() {
+			sw = !sw;
+			if(sw){
+				$('#menu').animate({
+					left: 50
+				},500);
+			} else{
+				$('#menu').animate({
+					left: -600
+				},500);
+			}
+		});
+		$('#menu>li').hover(function() {
+			$(this).animate({
+				opacity: 1
+			}, 500);
+		}, function() {
+			$(this).animate({
+				opacity: 0.2
+			},500);
+		});
 	});
 </script>
 <style>

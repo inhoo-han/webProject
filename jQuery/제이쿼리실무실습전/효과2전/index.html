@@ -7,17 +7,20 @@
         <script src="http://code.jquery.com/jquery-1.7.min.js"></script>
         <script>
 		$(document).ready(function() {
-			$('#navigation').animate({
-                left: -80
+            /* 사이드 메뉴가 안으로 들어간다 */
+			$('#navigation>li').animate({
+                marginLeft: -80
             }, 1000);
+
+            /* 사이드 메뉴에 hover하면 해당 메뉴가 나온다 */
             $('#navigation li').hover(function() {
-                $(this).animate({
-                    left: 80
-                },1000);
+                $(this).stop().animate({
+                    marginLeft: -2          /* 기존 마진과 동일하게 설정*/
+                }, 'normal');
             }, function() {
-                $(this).animate({
-                    left: 0
-                },1000);
+                $(this).stop().animate({
+                    marginLeft: -80
+                }, 'normal');
             });
 		});
 		</script>

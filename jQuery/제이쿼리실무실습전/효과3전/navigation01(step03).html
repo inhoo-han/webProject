@@ -52,28 +52,38 @@ ul.sub li:hover {
 <body onload="init(2)">
 <ul id="navi">
 	<li class="group">
-		<div class="title">Title 1</div>
+		<div class="title">회사소개</div>
 		<ul class="sub">
-			<li><a href="#">sub1</a></li>
-			<li><a href="#">sub1</a></li>
-			<li><a href="#">sub1</a></li>
+			<li><a href="#">CEO인사말</a></li>
+			<li><a href="#">회사연혁</a></li>
+			<li><a href="#">조직도</a></li>
+			<li><a href="#">찾아오시는 길</a></li>
 		</ul>
 	</li>
 	<li class="group">
-		<div class="title">Title 2</div>
+		<div class="title">제품정보</div>
 		<ul class="sub">
-			<li><a href="#">sub2</a></li>
+			<li><a href="#">샤프</a></li>
+			<li><a href="#">볼펜</a></li>
+			<li><a href="#">노트</a></li>
 		</ul>
 	</li>
 	<li class="group">
-		<div class="title">Title 3</div>
+		<div class="title">커뮤니티</div>
 		<ul class="sub">
-			<li><a href="#">sub3</a></li>
-			<li><a href="#">sub3</a></li>
+			<li><a href="#">공지사항</a></li>
+			<li><a href="#">메롱😛</a></li>
 		</ul>
 	</li>
 </ul>
 
-
+<script>
+	$('.sub').hide();
+	$('.group').hover(function() {
+		$(this).find('.sub').slideDown();
+	}, function() {
+		$(this).find('.sub').slideUp();
+	});
+</script>
 </body>
 </html>

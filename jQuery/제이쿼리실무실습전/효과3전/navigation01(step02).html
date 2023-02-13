@@ -50,34 +50,58 @@ ul.sub li:hover {
 
 </head>
 
-<body onload="init(0)">
+<body onload="init(1)">
 <ul id="navi">
 	<li class="group">
 		<div class="title">회사소개</div>
 		<ul class="sub">
-			<li><a href="#">sub1</a></li>
-			<li><a href="#">sub1</a></li>
-			<li><a href="#">sub1</a></li>
+			<li><a href="#">CEO인사말</a></li>
+			<li><a href="#">회사연혁</a></li>
+			<li><a href="#">찾아오시는 길</a></li>
 		</ul>
 	</li>
 	<li class="group">
 		<div class="title">제품정보</div>
 		<ul class="sub">
-			<li><a href="#">sub2</a></li>
+			<li><a href="#">냉장고</a></li>
+			<li><a href="#">세탁기</a></li>
+			<li><a href="#">에어컨</a></li>
 		</ul>
 	</li>
 	<li class="group">
-		<div class="title">Title 3</div>
+		<div class="title">커뮤니티</div>
 		<ul class="sub">
-			<li><a href="#">sub3</a></li>
-			<li><a href="#">sub3</a></li>
+			<li><a href="#">자료실</a></li>
+			<li><a href="#">Q&A</a></li>
 		</ul>
 	</li>
 </ul>
 <script>
+	$('.sub').slideUp();
+	let oldIndex = -1, index;
+	$('.title').click(function() {
+		index = $(this).parent().index();
+		if(index != oldIndex){
+			$('.sub').slideUp();
+			$(this).next().slideDown();
+			oldIndex = index;
+		} else{
+			$(this).next().slideUp();
+			oldIndex = -1;
+		}
+	});
 
-	 
-
+	/* function init() */
+	function init(pos) {
+		// let pos = 0;
+		setTimeout(function() {
+			// pos %= 3;
+			$('.sub').slideUp();
+			$('#navi>li').eq(pos).find('.sub').slideDown();
+			oldIndex = pos;
+			// pos++;
+		}, 3000);
+	}
 </script>
 
 </body>
