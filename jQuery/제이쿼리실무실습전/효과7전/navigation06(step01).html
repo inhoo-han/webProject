@@ -55,7 +55,28 @@
 	</div>
 </div>
 <script>
-	
+	$('.depth2').hide();
+	let oldIndex = -1, index;
+	// $('.lnb').toggle(function() {
+	// 	$('.depth2').slideUp();
+	// 	$(this).next().slideDown();
+	// }, function() {
+	// 	$(this).next().slideUp();
+	// });
+
+	$('.lnb').click(function() {
+		index = $(this).parent().index();
+		$('.lnb').removeClass('on');
+		if(index != oldIndex){
+			$('.depth2').slideUp();
+			$(this).next().slideDown();
+			$(this).addClass('on');
+			oldIndex = index;
+		} else{
+			$(this).next().slideUp();
+			oldIndex = -1;
+		}
+	})
 </script>
 </body>
 </html>

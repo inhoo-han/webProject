@@ -41,7 +41,7 @@
 <script>
 	$('.sub').hide();
 	$('#navi>li').hover(function() {
-		$(this).find('.sub').slideDown();
+		$(this).find('.sub').stop(true, true).slideDown();
 		$(this).find('a').first().addClass('on');
 	}, function() {
 		$(this).find('.sub').slideUp();

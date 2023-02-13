@@ -27,10 +27,27 @@
 	       .col_ani {top:95px;}
 		</style>
 		<title>jex1</title>
-		<script src="jquery-1.11.3.min.js"></script>
+		<script src="js/jquery-3.6.3.min.js"></script>
+		<script src="js/jquery-ui.min.js"></script>
 		<script>
 			$(document).ready(function () {
 				
+				let sw = [false, false, false];
+				let pos = [22,4,30];
+				let index;
+				$('.col').click(function() {
+					index = $(this).index();
+					sw[index] = !sw[index];
+					if(sw[index]){
+						$(this).animate({
+							top: 95
+						});
+					} else{
+						$(this).animate({
+							top: pos[index]
+						});
+					}
+				});
 			});
 		</script>
 	</head>

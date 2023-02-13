@@ -45,8 +45,8 @@ li {
 <div id="box">
 	<ul>
 		<li id="menu1">
-			메롱!
-			<div class="pagecurl">넌누구냐?</div>
+			정대만!
+			<div class="pagecurl">내 이름이 뭐지?</div>
 		</li>
 		<li id="menu2">
 			over
@@ -67,6 +67,17 @@ li {
 	</ul>
 </div>
 <script>
-	</script>
+	$('#box li').hover(function() {
+		$(this).find('.pagecurl').animate({
+			left: -100,
+			top: 100
+		},500);
+	}, function() {
+		$(this).find('.pagecurl').animate({
+			left: 0,
+			top: 0
+		},500);
+	});
+</script>
 </body>
 </html>
