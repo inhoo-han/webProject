@@ -60,45 +60,77 @@
     }
 
     /* left_right_control_panel 영역*/
-    .left_right_control_panel{
+    .left_control{
         position: absolute;
         top: 180px;
-        width: 595px;
-    }
-    .left_control, .right_control{
+        left: 5px;
         width: 20px;
         cursor: pointer;
     }
     .right_control{
         position: absolute;
-        right: 0;
+        top: 180px;
+        width: 20px;
+        right: 5px;
+        cursor: pointer;
+    }
+
+    /* slider_pager */
+    .slider_pager{
+        width: 600px;
+        text-align: center;
+        background-color: #000;
+    }
+    .slider_pager>img{
+        width: 70px;
+        height: 49px;
+        margin: 10px;
+        cursor: pointer;
+        border: 5px solid #fff;
     }
 </style>
 <script>
     $(function() {
         let index = 0;
+        let sw = false;
         moveSlider(index);
         $('.control_button').click(function() {
             index = $(this).index();
             moveSlider(index);
         });
         $('.left_control').click(function() {
+            // index--;
+            // if(index < 0) {
+            //     index+=5;
+            // }
+            // moveSlider(index);
             index--;
-            if(index < 0) {
-                index+=5;
-            }
             moveSlider(index);
         });
         $('.right_control').click(function() {
+            // index++;
+            // if(index > 4) {
+            //     index -=5;
+            // }
+            // moveSlider(index);
             index++;
-            if(index > 4) {
-                index -=5;
-            }
             moveSlider(index);
         })
 
         /* 이미지 슬라이더 구현 함수 */
         function moveSlider(index){
+            if(index > 0 && index < 4){
+                $('.left_control').fadeIn(500); 
+                $('.right_control').fadeIn(500); 
+            }
+            if(index == 0){
+                $('.left_control').fadeOut(500);
+                $('.right_control').fadeIn(500); 
+            } 
+            if(index == 4){
+                $('.left_control').fadeIn(500); 
+                $('.right_control').fadeOut(500);
+            }
             $('.slider_panel').animate({
                 left: -(index*600)
             }, 'slow');
@@ -108,6 +140,36 @@
             $('.slider_text').hide();
             $('.slider_text').eq(index).fadeIn('slow');
         }
+
+        /* 자동 이미지 슬라이더 구현 함수 */
+        // let auto;                   //setInterval, clearInterval 컨트롤하는 변수
+        // autoSlider();               //자동슬라이딩 되라고 호출
+        // function autoSlider() {
+        //     auto = setInterval(function() {
+        //         if(index < 4 && sw == false){
+        //             $('.right_control').trigger('click');
+        //         }else{
+        //             sw = true;
+        //         }
+        //         if(index > 0 && sw == true) {
+        //             $('.left_control').trigger('click');
+        //         }else{
+        //             sw = false;
+        //         }
+        //     }, 1000);
+        // }
+        // $('.animation_canvas').hover(function() {
+        //     clearInterval(auto);
+        // }, function() {
+        //     autoSlider();
+        // });
+
+        /* slider_pager */
+        let mindex;
+        $('.slider_pager>img').click(function() {
+            mindex = $(this).index();
+            moveSlider(mindex);
+        });
     });
 </script>
 </head>
@@ -166,6 +228,12 @@
         </div>
     </div>
     <!-- [E].animation_canvas -->
-    
+    <div class="slider_pager">
+        <img src="images/Koala.jpg" alt="Koala">
+        <img src="images/Desert.jpg" alt="Desert">
+        <img src="images/Lighthouse.jpg" alt="Lighthouse">
+        <img src="images/Jellyfish.jpg" alt="Jellyfish">
+        <img src="images/Penguins.jpg" alt="Penguins">
+    </div>
 </body>
 </html>
