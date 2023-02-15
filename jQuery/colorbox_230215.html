@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Monster MashUp</title>
+<link rel="stylesheet" href="css/colorbox.css">
+<script src="js/jquery-3.6.3.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/jquery.colorbox.js"></script>
+<script>
+    $(function() {
+        $('a[rel=lightbox]').colorbox({
+            transition: 'fade',
+            opacity: 0.8,
+            onOpen: function() {
+                alert('2월에 출시된 제품입니다.');
+            },
+            onClosed: function() {
+                alert('뿅');
+            },
+            width: 300,
+            height: 100
+        });
+    });
+</script>
+</head>
+<body>
+    <h1>ColorBox Plug-in</h1>
+    <a rel="lightbox" href="images/Chrysanthemum.jpg" title="Chrysanthemum">Chrysanthemum</a>
+    <a rel="lightbox" href="images/Desert.jpg" title="Desert">Desert</a>
+    <a rel="lightbox" href="images/Hydrangeas.jpg" title="Hydrangeas">Hydrangeas</a>
+    <a rel="lightbox" href="images/Jellyfish.jpg" title="Jellyfish">Jellyfish</a>
+    <a rel="lightbox" href="images/Koala.jpg" title="Koala">Koala</a>
+    <a rel="lightbox" href="images/Lighthouse.jpg" title="Lighthouse">Lighthouse</a>
+    <a rel="lightbox" href="images/Penguins.jpg" title="Penguins">Penguins</a>
+    <a rel="lightbox" href="images/Tulips.jpg" title="Tulips">Tulips</a>
+    <a href="#">나는 그냥 a야</a>
+</body>
+</html>

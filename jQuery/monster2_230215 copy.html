@@ -36,6 +36,12 @@
         top: 30px;
         color: #33ff66;
     }
+    .random_top{
+        position: absolute;
+        left: 580px;
+        top: 20px;
+        cursor: pointer;
+    }
     #container{
         position: relative;
         left: 0;
@@ -80,9 +86,7 @@
     $(function() {
         let click = [0,0,0,0];
         let index;
-        setInterval(function() {
-            $('.lightning01').fadeIn(250).fadeOut(250);
-        }, 4000);
+        lightning();
         setInterval(function() {
             $('.lightning02').fadeIn(250).fadeOut(250);
         }, 5000);
@@ -90,14 +94,15 @@
             $('.lightning03').fadeIn(250).fadeOut(250);
         }, 7000);
 
-        /* 머리 이미지 슬라이드 */
+        /* 몬스터 이미지 슬라이드 */
         $('.face').click(function() {
             index = $(this).index();
             moveMonster(index, this);
         });
-        /* 몬스터 이미지 슬라이드 구현함수 */
+        /* 몬스터 이미지 슬라이드 구현 함수 */
         function moveMonster (index, obj) {
             click[index]++;
+            // alert(click[index]);
             if(click[index] < 10){
                 $(obj
                 ).animate({
@@ -110,6 +115,32 @@
                 click[index] = 0;
             }
         };
+
+        /* 랜덤 몬스터 버튼 */
+        $('.random_top').click(function() {
+            $('.face').each(function (index){
+                click[index] = Math.floor(Math.random() * 10);
+                moveMonster(index, this);
+            });
+        });
+        // $('.random_top').click(function() {
+        //     let pos;
+        //     for(let i = 0; i < 4; i++) {
+        //         pos = Math.floor(Math.random() * 10);
+        //         // alert("pos" + pos);
+        //         click[i] = pos-1;
+        //         // alert(click[i]);
+        //         moveMonster(i, $('.face').eq(i));
+        //     }
+        // });
+
+        /* 번개치는 함수 */
+        function lightning() {
+            $('.lightning01').fadeIn(250).fadeOut(250);
+            setTimeout(function() {
+                lightning();
+            }, 4000);
+        }
     });
 </script>
 </head>
@@ -120,6 +151,7 @@
     <header id="top">
         <img class="text_top" src="images/Monster_Mashup.png" alt="Monster_Mashup">
         <p>Make your own Monster face by Clicking on the Picture</p>
+        <img class="random_top" src="images/monster.png" alt="monster" title="클릭하면 랜덤하게 몬스터가 만들어 집니다.">
     </header>
     <div id="container">
         <div class="frame">
