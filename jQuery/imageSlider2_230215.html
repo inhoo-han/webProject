@@ -16,25 +16,12 @@
     }
     .slider_panel{
         position: relative;
-        width: 3000px;
+        width: 4200px;
     }
     .slider_image{
         width: 600px;
         height: 400px;
         float: left;
-    }
-    .slider_text_panel{
-        position: absolute;
-        top: 200px;
-        left: 50px;
-    }
-    .slider_text{
-        position: absolute;
-        width: 300px;
-        height: 200px;
-        color: #000;
-        font-weight: bold;
-        text-shadow: 1px 1px 1px #fff, -1px -1px 1px #fff, -1px 1px 1px #fff, 1px -1px 1px #fff;
     }
     /* control_panel 영역 */
     .control_panel{
@@ -60,63 +47,73 @@
     }
 
     /* left_right_control_panel 영역*/
-    .left_right_control_panel{
+    .left_control{
         position: absolute;
         top: 180px;
-        width: 595px;
-    }
-    .left_control, .right_control{
+        left: 5px;
         width: 20px;
         cursor: pointer;
     }
     .right_control{
         position: absolute;
-        right: 0;
+        top: 180px;
+        width: 20px;
+        right: 5px;
+        cursor: pointer;
     }
 </style>
 <script>
     $(function() {
-        let index = 0;
-        $('.slider_text').hide();
-        // moveSlider(index);
-        setInterval(function() {
-            moveSlider(index);
-            index++
-            if(index > 4) {
-                index -=5;
-            }
-        }, 5000);
+        $('.slider_panel').append($('.slider_image').first().clone());
+        $('.slider_panel').prepend($('.slider_image').eq(-2).clone()); //맨 마지막 이미지가 1번 이미지가 되었기 때문!
+        let index = 1;
+        moveSlider(index);
 
         $('.control_button').click(function() {
             index = $(this).index();
-            moveSlider(index);
+            moveSlider(index+1);
         });
         $('.left_control').click(function() {
-            index--;
-            if(index < 0) {
-                index+=5;
+            if(index > 1) {
+                index--;
+                moveSlider(index);
+            } else{
+                $('.slider_panel').css('left', -3600);
+                index = 5;
+                moveSlider(index);
             }
-            moveSlider(index);
         });
         $('.right_control').click(function() {
-            index++;
-            if(index > 4) {
-                index -=5;
+            if(index < 5){
+                index++;
+                moveSlider(index);
+            } else{
+                $('.slider_panel').css('left', 0);
+                index = 1;
+                moveSlider(index);
             }
-            moveSlider(index);
-        })
-
-        /* 이미지 슬라이더 구현 함수 */
+        });
         function moveSlider(index){
-            $('.slider_panel').animate({
+            $('.slider_panel').stop(true).animate({
                 left: -(index*600)
-            }, 'slow');
+            },'slow');
             $('.control_button').removeClass('active');
-            $('.control_button').eq(index).addClass('active');
-            /* slider_text */
-            $('.slider_text').hide();
-            $('.slider_text').eq(index).fadeIn('slow');
+            $('.control_button').eq(index-1).addClass('active');
         }
+        
+        /* 자동 이미지 슬라이더 구현 함수 */
+        let auto;                   //setInterval, clearInterval 컨트롤하는 변수
+        autoSlider();               //자동슬라이딩 되라고 호출
+        function autoSlider() {
+            auto = setInterval(function() {
+                $('.right_control').trigger('click');
+            }, 1000);
+        }
+        $('.animation_canvas').hover(function() {
+            clearInterval(auto);
+        }, function() {
+            autoSlider();
+        });
     });
 </script>
 </head>
@@ -134,7 +131,7 @@
             <img class="slider_image" src="images/Penguins.jpg" alt="Penguins">
         </div>
         <!-- 4. 각 이미지에 대한 설명 글을 담고 있는 패널(존재 여부 결정 가능) -->
-        <div class="slider_text_panel">
+        <!-- <div class="slider_text_panel">
             <div class="slider_text">
                 <h2>Koala</h2>
                 <p>코알라는 매우 귀엽습니다. 유대목 코알라과에 속하는 포유류입니다. 
@@ -159,7 +156,7 @@
                 <p>펭귄에 대한 다큐멘터리를 보면 항상 재미있던 기억이 납니다.
                     황제펭귄, 젠투펭귄, 또 뭐가 있더라. 암튼 펭귄이 귀여웠습니다.</p>
             </div>
-        </div>
+        </div> -->
         <!-- 컨트롤 패널 영역 -->
         <div class="control_panel">
             <div class="control_button"></div>
@@ -175,6 +172,5 @@
         </div>
     </div>
     <!-- [E].animation_canvas -->
-    
 </body>
 </html>
