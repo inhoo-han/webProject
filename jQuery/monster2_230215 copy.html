@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Monster MashUp</title>
+<script src="js/jquery-3.6.3.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<style>
+    body{
+        background-color: #000;
+    }
+    .lightning{
+        display: none;
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 0;
+    }
+    #top{
+        position: relative;
+        left: 0;
+        top: 0;
+        height: 80px;
+        z-index: 10;
+    }
+    .text_top{
+        position: absolute;
+        left: 200px;
+        top: 10;
+    }
+    #top p{
+        position: absolute;
+        left: 140px;
+        top: 30px;
+        color: #33ff66;
+    }
+    #container{
+        position: relative;
+        left: 0;
+        top: 0;
+        height: 700px;
+    }
+    .frame{
+        position: relative;
+        left: 100px;
+        top: 0;
+        width: 546px;
+        height: 629px;
+        background-image: url(images/frame.png);
+    }
+    .pic_box{
+        position: absolute;
+        left: 91px;
+        top: 84px;
+        width: 367px;
+        height: 460px;
+        overflow: hidden;
+    }
+    .face{
+        position: relative;
+        left: 0;
+        top: 0;
+    }
+    .head{
+        height: 172px;
+    }
+    .eyes{
+        height: 79px;
+    }
+    .nose{
+        height: 86px;
+    }
+    .mouth{
+        height: 123px;
+    }
+</style>
+<script>
+    $(function() {
+        let click = [0,0,0,0];
+        let index;
+        setInterval(function() {
+            $('.lightning01').fadeIn(250).fadeOut(250);
+        }, 4000);
+        setInterval(function() {
+            $('.lightning02').fadeIn(250).fadeOut(250);
+        }, 5000);
+        setInterval(function() {
+            $('.lightning03').fadeIn(250).fadeOut(250);
+        }, 7000);
+
+        /* 머리 이미지 슬라이드 */
+        $('.face').click(function() {
+            index = $(this).index();
+            moveMonster(index, this);
+        });
+        /* 몬스터 이미지 슬라이드 구현함수 */
+        function moveMonster (index, obj) {
+            click[index]++;
+            if(click[index] < 10){
+                $(obj
+                ).animate({
+                    left: -(click[index]*367)
+                }, 500);
+            } else{
+                $(obj).animate({
+                    left: 0
+                },500)
+                click[index] = 0;
+            }
+        };
+    });
+</script>
+</head>
+<body>
+    <img class="lightning lightning01" src="images/lightning-01.jpg" alt="lightning-01">
+    <img class="lightning lightning02" src="images/lightning-02.jpg" alt="lightning-02">
+    <img class="lightning lightning03" src="images/lightning-03.jpg" alt="lightning-03">
+    <header id="top">
+        <img class="text_top" src="images/Monster_Mashup.png" alt="Monster_Mashup">
+        <p>Make your own Monster face by Clicking on the Picture</p>
+    </header>
+    <div id="container">
+        <div class="frame">
+            <div class="pic_box">
+                <div class="head face">
+                    <img src="images/headsstrip.jpg" alt="headsstrip">
+                </div>
+                <div class="eyes face">
+                    <img src="images/eyesstrip.jpg" alt="eyesstrip">
+                </div>
+                <div class="nose face">
+                    <img src="images/nosesstrip.jpg" alt="nosesstrip">
+                </div>
+                <div class="mouse face">
+                    <img src="images/mouthsstrip.jpg" alt="mouthsstrip">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
