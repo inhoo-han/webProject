@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- products라는 태그 만듦 -->
+<products>
+    <product>
+        <name>소화가 잘 되는 우유</name>
+        <price>3100</price>
+    </product>
+    <product>
+        <name>연세우유 크림빵</name>
+        <price>2500</price>
+    </product>
+    <product>
+        <name>짱맛탱 밀크티</name>
+        <price>2800</price>
+    </product>
+</products>

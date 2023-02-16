@@ -12,19 +12,20 @@
 <script>
 $(function() {
     $.ajax({
-        url: 'header_230216.html',
-        // 불러오기 성공하면 위의 url 내용이 data에 담긴다.
+        url: 'product_230216.xml',
         success: function (data) {
-            $('body').prepend(data);
+            $(data).find('product').each(function() {
+                let name = $(this).find('name').html();
+                let price = $(this).find('price').html();
+                $('<h2></h2>').html(name + "💸" + price).appendTo('#list');
+            });
         }
     });
 });
 </script>
 </head>
 <body>
-    <div id="contents">
-        <h2>여기는 홈페이지 본문입니다.</h2>
-        <p>본문 내용입니다.</p>
-    </div>
+    <h1>편의점 물품리스트</h1>
+    <div id="list"></div>
 </body>
 </html>
