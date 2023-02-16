@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>jQuery colorbox</title>
+<link rel="stylesheet" href="css/jquery.bxslider.css">
+<script src="js/jquery-3.6.3.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/jquery.bxslider.js"></script>
+<style>
+    #ani-canvas{
+        width: 500px;
+        overflow: hidden;
+    }
+    .slider img{
+        width: 500px;
+    }
+    .slider-pager{
+        list-style: none;
+    }
+    .slider-pager li{
+        float: left;
+        margin-right: 10px;
+    }
+    .slider-pager img{
+        width: 50px;
+    }
+</style>
+<script>
+$(function() {
+    $('.slider').bxSlider({
+        pagerCustom: '.slider-pager'
+    });
+});
+</script>
+</head>
+<body>
+    <div id="ani-canvas">
+        <ul class="slider">
+            <li><img src="images/Koala.jpg" alt="Koala"></li>
+            <li><img src="images/Tulips.jpg" alt="Tulips"></li>
+            <li><img src="images/Chrysanthemum.jpg" alt="Chrysanthemum"></li>
+            <li><img src="images/Lighthouse.jpg" alt="Lighthouse"></li>
+            <li><img src="images/Penguins.jpg" alt="Penguins"></li>
+            <li><img src="images/Desert.jpg" alt="Desert"></li>
+            <li><img src="images/Jellyfish.jpg" alt="Jellyfish"></li>
+        </ul>
+        <ul class="slider-pager">
+            <li><a href="#" data-slide-index="0">
+                <img src="images/Koala.jpg" alt="Koala">
+            </a></li>
+            <li><a href="#" data-slide-index="1">
+                <img src="images/Tulips.jpg" alt="Tulips">
+            </a></li>
+            <li><a href="#" data-slide-index="2">
+                <img src="images/Chrysanthemum.jpg" alt="Chrysanthemum">
+            </a></li>
+            <li><a href="#" data-slide-index="3">
+                <img src="images/Lighthouse.jpg" alt="Lighthouse">
+            </a></li>
+            <li><a href="#" data-slide-index="4">
+                <img src="images/Penguins.jpg" alt="Penguins">
+            </a></li>
+            <li><a href="#" data-slide-index="5">
+                <img src="images/Desert.jpg" alt="Desert">
+            </a></li>
+            <li><a href="#" data-slide-index="6">
+                <img src="images/Jellyfish.jpg" alt="Jellyfish">
+            </a></li>
+        </ul>
+    </div>
+</body>
+</html>

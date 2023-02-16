@@ -5,20 +5,41 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>jQuery colorbox</title>
-<link rel="stylesheet" href="css/colorbox.css">
+<link rel="stylesheet" href="css/jquery.bxslider.css">
 <script src="js/jquery-3.6.3.min.js"></script>
 <script src="js/jquery-ui.min.js"></script>
 <script src="js/jquery.bxslider.js"></script>
 <style>
-
+    #ani-canvas{
+        width: 500px;
+        overflow: hidden;
+    }
+    .slider img{
+        width: 500px;
+    }
 </style>
 <script>
 $(function() {
-
+    $('.slider').bxSlider({
+        auto: true,
+        autoControls: true,
+        stopAutoOnClick:true,
+        pager: true
+    });
 });
 </script>
 </head>
 <body>
-
+    <div id="ani-canvas">
+        <ul class="slider">
+            <li><img src="images/Koala.jpg" alt="Koala"></li>
+            <li><img src="images/Tulips.jpg" alt="Tulips"></li>
+            <li><img src="images/Chrysanthemum.jpg" alt="Chrysanthemum"></li>
+            <li><img src="images/Lighthouse.jpg" alt="Lighthouse"></li>
+            <li><img src="images/Penguins.jpg" alt="Penguins"></li>
+            <li><img src="images/Desert.jpg" alt="Desert"></li>
+            <li><img src="images/Jellyfish.jpg" alt="Jellyfish"></li>
+        </ul>
+    </div>
 </body>
 </html>
