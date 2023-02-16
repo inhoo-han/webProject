@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>jQuery colorbox</title>
+<link rel="stylesheet" href="css/colorbox.css">
+<script src="js/jquery-3.6.3.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/jquery.colorbox.js"></script>
+<script>
+$(function() {
+    $('#search-form').submit(function(event) {
+        //Ajax를 수행
+        let url = 'http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?';
+        $.getJSON(url, $(this).serialize(), function(data) {
+            $('#images').empty();       //empty() : 비우기. 왜 기억 안나? - 전에 검색한 내용 지워주겠다는 뜻!
+            $.each(data.items, function(index, item) {
+                let $image/* $ 붙이면 jQuery 변수 */ = $('<img />').attr({
+                    src: item.media.m
+                })
+                $('<a></a>').attr({
+                    class: 'flickr-image',
+                    href: item.media.m,
+                    rel: 'colorbox'
+                }).html($image).appendTo('#images');
+            });
+            $('a.flickr-image').colorbox();
+        });
+        // prevent default제거. 외부로 가지 않게함. 
+        return false;
+    })
+});
+</script>
+</head>
+<body>
+    <h1>칼라박스를 활용한 플리커 이미지 앨범</h1>
+    <form id="search-form">
+        <input type="text" name="tags">
+        <!-- type="hidden" : C의 화면에 노출되지는 않지만 C의 정보를 S로 가져갈 때 사용되는 타입 -->
+        <input type="hidden" name="format" value="json">
+        <input type="submit" value="search">
+    </form>
+    <div id="images">
+
+    </div>
+</body>
+</html>

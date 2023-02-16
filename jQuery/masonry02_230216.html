@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>jQuery colorbox</title>
+<link rel="stylesheet" href="css/colorbox.css">
+<script src="js/jquery-3.6.3.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/masonry.pkgd.min.js"></script>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    body{
+        background-color: #525252;
+    }
+    .item{
+        width: 100px;
+        height: 100px;
+        margin: 5px;
+        background-color: #fff;
+        border-radius: 10px;
+        float: left;
+        overflow: hidden;
+    }
+    .big{
+        width: 210px;
+        height: 430px;
+    }
+    .normal{
+        width: 210px;
+        height: 210px;
+    }
+    .small{
+        width: 100px;
+        height: 100px;
+    }
+</style>
+<script>
+$(function() {
+    $('#masonry-container').masonry({
+        itemSelector: '.item',
+        columnWidth: 110 /*margin 포함*/
+    });
+    // 문서 안에 있는 전부에게 이벤트 발생. 이미지를 동적으로 추가, 삭제하기 위해서
+    $(document).on('click', '.item', function(event) {
+        if(event.shiftKey){
+            $('#masonry-container').masonry('remove', $(this));
+            $('#masonry-container').masonry('layout');  // 삭제하여 생긴 빈 자리를 채워줌.
+        }else{
+            let item = $(this).clone();
+            $('#masonry-container').append(item);
+            $('#masonry-container').masonry('addItems', item);
+            $('#masonry-container').masonry('layout');
+        }
+    });
+});
+</script>
+</head>
+<body>
+    <div id="masonry-container">
+        <img class="item small" src="images/Chrysanthemum.jpg" alt="Chrysanthemum">
+        <img class="item big" src="images/Desert.jpg" alt="Desert">
+        <img class="item normal" src="images/Koala.jpg" alt="Koala">
+        <img class="item small" src="images/Lighthouse.jpg" alt="Lighthouse">
+        <img class="item small" src="images/Hydrangeas.jpg" alt="Hydrangeas">
+        <img class="item small" src="images/Tulips.jpg" alt="Tulips">
+        <img class="item big" src="images/coffee-blue.jpg" alt="coffee-blue">
+        <img class="item small" src="images/girl.jpg" alt="girl">
+        <img class="item small" src="images/boy.png" alt="boy">
+        <img class="item small" src="images/bg4.jpg" alt="bg4">
+        <img class="item normal" src="images/umbrella.jpg" alt="umbrella">
+        <img class="item small" src="images/coffee-pink.jpg" alt="coffee-pink">
+    </div>
+</body>
+</html>
