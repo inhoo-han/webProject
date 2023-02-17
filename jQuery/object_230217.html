@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>cookie</title>
+<script src="js/jquery-3.6.3.min.js"></script>
+<script src="js/jquery.cookie.js"></script>
+<style>
+
+</style>
+<script>
+// $(function() {
+    let product = {
+        name: '냉장고',
+        price: 2100000,
+        type: '양문형'
+    }
+    //아래 두 표현의 결과는 동일하다. 대괄호를 사용할 때는 반드시 따옴표를 사용해야 한다.
+    // alert(product.name);
+    // alert(product['name']);
+    function proName() {
+        alert(product.name);
+    }
+// });
+</script>
+</head>
+<body>
+    <h2 onclick="proName();">제품이름?</h2>
+</body>
+</html>

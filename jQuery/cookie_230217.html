@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>cookie</title>
+<script src="js/jquery-3.6.3.min.js"></script>
+<script src="js/jquery.cookie.js"></script>
+<style>
+    #notice_wrap{
+        position: relative;
+        border: 1px solid #ccc;
+        z-index: 10;
+        left: 200px;
+        top: 100px;
+    }
+</style>
+<script>
+$(function() {
+    if($.cookie('popup') == 'none') {
+        $('#notice_wrap').hide();
+    }
+    let $expChk = $('#expiresChk');          //체크박스 객체변수
+    $('.closeBtn').on('click', function() {
+        if($expChk.is(':checked')){
+            $.cookie('popup', 'none', {
+                expires: 1,
+                path: '/'                   //쿠키의 정보가 들어가는 곳
+            });
+        }
+        $('#notice_wrap').hide();
+    });
+});
+</script>
+</head>
+<body>
+    <h1>여기는 메인화면</h1>
+    <div id="notice_wrap">
+        <p>다음 주에 UI구현, UI테스트 평가있습니다.</p>
+        <img src="images/shepherd.jpg" alt="shepherd" width="400px">
+        <p class="closeWrap">
+            <input type="checkbox" name="expiresChk" id="expiresChk">
+            <label for="expiresChk">오늘 하루동안 열지 않기</label>
+            <button class="closeBtn">닫기</button>
+        </p>
+    </div>
+</body>
+</html>
