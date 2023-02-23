@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html,body,div,form,fieldset,legend,label,input,button,p,span,a{
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+            color: #333;
+            box-sizing: border-box;
+        }
+        #container{
+            position: relative;
+            width: 300px;
+            height: 160px;
+            background: #eee;
+            padding: 25px;
+            margin: 20px;
+        }
+        .form_box{
+            position: relative;
+            margin: 0 auto;
+            width: 200px;
+            height: 60px;
+            overflow: hidden;
+        }
+        fieldset{
+            border: none;
+        }
+        legend{
+            display: none;
+        }
+        label{
+            position: absolute;
+            left: -9999px;
+        }
+        .form_box input{
+            position: relative;
+            width: 140px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            padding: 5px;
+            margin-bottom: 5px;
+            font-size: 10px;
+        }
+        .form_box button{
+            position: absolute;
+            width: 50px;
+            height: 56px;
+            right: 32px;
+            top: 0;
+            right: 0;
+            color: #fff;
+            background-color: #333;
+            border: none;
+            border-radius: 3px;
+            font-size: 10px;
+        }
+        .text{
+            position: relative;
+            width: 100%;
+            margin-top: 20px;
+            font-size: 10px;
+            text-align: center;
+            padding: 5px;
+            border-top: 1px solid #ccc;
+            border-bottom: 1px solid #ccc;
+        }
+        .text span:after{
+            content: "|";
+            position: relative;
+            color: #ccc;
+            padding: 5px;
+        }
+        .text span:last-child::after{
+            content: "";
+        }
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div class="form_box">
+            <form action="#" method="post">
+                <fieldset>
+                    <legend>회원가입</legend>
+                    <p>
+                        <label for="id">아이디</label>
+                        <input type="text" id="id" placeholder="아이디" required>
+                    </p>
+                    <p>
+                        <label for="pw">비밀번호</label>
+                        <input type="password" id="pw" placeholder="비밀번호" required>
+                    </p>
+                    <button>로그인</button>
+                </fieldset>
+            </form>
+        </div>
+        <div class="text">
+            <p>
+                <span><a href="#">회원가입</a></span>
+                <span><a href="#">아이디찾기</a></span>
+                <span><a href="#">비밀번호찾기</a></span>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
